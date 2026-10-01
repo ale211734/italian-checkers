@@ -1,0 +1,22 @@
+# Dipendenze installate da vcpkg.json (manifest mode, vedi CMakePresets.json).
+find_package(OpenGL REQUIRED)
+find_package(glfw3 CONFIG REQUIRED)
+find_package(glad CONFIG REQUIRED)
+find_package(imgui CONFIG REQUIRED)
+find_package(glm CONFIG REQUIRED)
+
+add_executable(dama_gui
+  main.cpp
+  app.cpp
+  platform/window.cpp
+  input/keyboard.cpp
+  renderer/board_renderer.cpp
+  renderer/camera.h
+  ui/ui.cpp
+)
+target_include_directories(dama_gui PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+# glad.h fornisce le dichiarazioni OpenGL: impedisce a GLFW e ImGui di includere <GL/gl.h>.
+target_compile_definitions(dama_gui PRIVATE GLFW_INCLUDE_NONE IMGUI_IMPL_OPENGL_LOADER_GLAD)
+target_link_libraries(dama_gui PRIVATE
+  glfw glad::glad imgui::imgui glm::glm OpenGL::GL
+)
