@@ -12,7 +12,7 @@ layout(location = 0) in vec2 aPos; // quad [0,1]x[0,1]
 
 uniform mat4 uMVP;
 
-out vec2 vUV;
+out vec2 vUV; // the vertex position of two triangles of quad
 
 void main() {
     vUV = aPos;
@@ -21,7 +21,7 @@ void main() {
 )";
 
 const char* kFragmentSrc = R"(#version 330 core
-in vec2 vUV;
+in vec2 vUV; // is interpoled on the fragment in the way to determinate the cell
 out vec4 FragColor;
 
 uniform int uCursorR;
@@ -31,20 +31,41 @@ void main() {
     vec2 boardCoord = vUV * 8.0f;
     
     int c = int(floor(boardCoord.x));
-    int r = int(floor((1.0f - vUV.y) * 8.0f));
+    int r = int(floor(boardCoord.y));
 
     c = clamp(c, 0, 7);
     r = clamp(r, 0, 7);
+    vec4 color = vec4(1.0f, 1.0f, 0.00f, 1.0f);
 
-    vec4 color;
-    if (r == uCursorR && c == uCursorC) {
-        color = vec4(0.95f, 0.80f, 0.25f, 1.0f);
-    } else if ((r + c) % 2 == 0) {
-        color = vec4(0.87f, 0.72f, 0.53f, 1.0f);
-    } else {
-        color = vec4(0.42f, 0.30f, 0.20f, 1.0f);
+    vec4 colorSquarePiece = vec4(0.59f, 0.29f, 0.00f, 1.0f);
+    vec4 colorNoPiece = vec4(0.98f, 0.93f, 0.84f, 1.0f);
+
+    if (r == uCursorR && c == uCursorC)
+    {
+        FragColor = vec4(0.95f, 0.80f, 0.25f, 1.0f);
     }
-    FragColor = color;
+    else if (r % 2 == 0) // even row
+    {
+        if (c % 2 != 0) // odd column
+        {
+            FragColor = colorSquarePiece;
+        }
+        else
+        {
+            FragColor = colorNoPiece;
+        } 
+    }
+    else // odd row
+    {
+        if (c % 2 != 0) // odd column
+        {
+           FragColor = colorNoPiece;
+        }
+        else
+        {
+            FragColor = colorSquarePiece;
+        } 
+    }
 }
 )";
 
@@ -89,6 +110,7 @@ bool BoardRenderer::init(int /*width*/, int /*height*/) {
     }
 
     const std::array<float, 12> quad = {
+        // two triangles compose the quad
         0.0f, 0.0f,  1.0f, 0.0f,  1.0f, 1.0f,
         0.0f, 0.0f,  1.0f, 1.0f,  0.0f, 1.0f,
     };
@@ -115,6 +137,8 @@ void BoardRenderer::render(const Camera& camera, int cursorR, int cursorC) {
     glUseProgram(program_);
 
     glm::mat4 model = glm::mat4(1.0f);
+    // the board extend in local space from 0,0 to 1,1
+    // we scale it by 8x in this way we can design 8x8 matrix of the board
     model = glm::scale(model, glm::vec3(8.0f, 8.0f, 1.0f));
     // create the mvp matrix
     glm::mat4 mvp = camera.viewProjectionMatrix() * model;
