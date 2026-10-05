@@ -7,8 +7,13 @@ on: [push]
 jobs:
     # Nome del job su windows il test verrà fatto con una macchina windows
     build:
-        # GitHub ci fornisce una macchina Windows temporanea
-        runs-on: windows-latest
+       # GitHub CI eseguirà il job sia su Windows che su Ubuntu
+        strategy:
+            matrix:
+                os: [windows-latest, ubuntu-latest]
+        
+        # usa prima la wm di windows-latest e poi di ubuntu-latest
+        runs-on: ${{ matrix.os }} 
         
         # descrive le operazioni che saranno fatte in ordine sequenziale
         steps:
