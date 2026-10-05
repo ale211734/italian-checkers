@@ -19,17 +19,17 @@ jobs:
         
         #installiamo il vcpkg e faccio il boostrap
         -name: Setup vcpkg
-         run: | # dice di considerare tutte le linee che ci sono sotto in ordine sequenziale
+        run: | # dice di considerare tutte le linee che ci sono sotto in ordine sequenziale
             git clone https://github.com/microsoft/vcpkg.git # scarica il vcpkg
             .\vcpkg\boostrap-vcpkg.bat
             
         -name:
-         run: > #si usa per uno stesso comando scritto su due righe diverse
-         cmake -B build -S .
-         -DCMAKE_TOOLCHAIN_FILE=${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake
+        run: > #si usa per uno stesso comando scritto su due righe diverse
+        cmake -B build -S .
+        -DCMAKE_TOOLCHAIN_FILE=${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake
          
         # fa il build del progetto
         -name: Building Project
-         run: cmake --build build --config Release 
+        run: cmake --build build --config Release 
         
         
