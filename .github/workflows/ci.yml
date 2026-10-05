@@ -5,7 +5,7 @@ name: CI-damaItaliana
 on: [push]
 
 jobs:
-    # Nome del job
+    # Nome del job su windows il test verrà fatto con una macchina windows
     build:
         # GitHub ci fornisce una macchina Windows temporanea
         runs-on: windows-latest
