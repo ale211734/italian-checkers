@@ -15,7 +15,7 @@ jobs:
             # noma descrittivo dell'operazione
             - name: Checkout-damaItaliana
               # è il comando vero e proprio 
-              uses: actions/checkout@v4
+              uses: actions/checkout@v5
             
             #installiamo il vcpkg e faccio il boostrap
             - name: Setup vcpkg
