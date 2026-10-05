@@ -7,29 +7,29 @@ on: [push]
 jobs:
     # Nome del job
     build:
-    # GitHub ci fornisce una macchina Windows temporanea
-    runs-on: windows-latest
-    
-    # descrive le operazioni che saranno fatte in ordine sequenziale
-    steps:
-        # noma descrittivo dell'operazione
-        - name: Checkout-damaItaliana
-        # è il comando vero e proprio 
-        uses: actions/checkout@v4
+        # GitHub ci fornisce una macchina Windows temporanea
+        runs-on: windows-latest
         
-        #installiamo il vcpkg e faccio il boostrap
-        - name: Setup vcpkg
-        run: | # dice di considerare tutte le linee che ci sono sotto in ordine sequenziale
-            git clone https://github.com/microsoft/vcpkg.git # scarica il vcpkg
-            .\vcpkg\boostrap-vcpkg.bat
+        # descrive le operazioni che saranno fatte in ordine sequenziale
+        steps:
+            # noma descrittivo dell'operazione
+            - name: Checkout-damaItaliana
+            # è il comando vero e proprio 
+            uses: actions/checkout@v4
             
-        - name:
-        run: > #si usa per uno stesso comando scritto su due righe diverse
-        cmake -B build -S .
-        -DCMAKE_TOOLCHAIN_FILE=${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake
-         
-        # fa il build del progetto
-        - name: Building Project
-        run: cmake --build build --config Release 
+            #installiamo il vcpkg e faccio il boostrap
+            - name: Setup vcpkg
+            run: | # dice di considerare tutte le linee che ci sono sotto in ordine sequenziale
+                git clone https://github.com/microsoft/vcpkg.git # scarica il vcpkg
+                .\vcpkg\boostrap-vcpkg.bat
+                
+            - name:
+            run: > #si usa per uno stesso comando scritto su due righe diverse
+            cmake -B build -S .
+            -DCMAKE_TOOLCHAIN_FILE=${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake
+             
+            # fa il build del progetto
+            - name: Building Project
+            run: cmake --build build --config Release 
         
         
