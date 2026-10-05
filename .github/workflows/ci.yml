@@ -21,7 +21,7 @@ jobs:
             - name: Setup vcpkg
               run: | # dice di considerare tutte le linee che ci sono sotto in ordine sequenziale
                 git clone https://github.com/microsoft/vcpkg.git # scarica il vcpkg
-                .\vcpkg\boostrap-vcpkg.bat
+                .\vcpkg\bootstrap-vcpkg.bat
                 
             - name:
               run: > #si usa per uno stesso comando scritto su due righe diverse
