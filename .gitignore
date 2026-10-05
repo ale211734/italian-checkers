@@ -1,0 +1,24 @@
+# Build directories
+/build/
+/out/
+/.vs/
+/vcpkg_installed/
+
+# C++ binaries and intermediate files
+*.exe
+*.dll
+*.lib
+*.obj
+*.pdb
+*.ilk
+*.exp
+*.sdf
+*.ipch
+.vs/
+
+# Temp files
+*.txt.user
+*.suo
+.vscode/
+*.user
+Nuovo Documento di testo.txt

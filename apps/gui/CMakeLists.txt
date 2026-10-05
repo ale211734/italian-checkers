@@ -12,11 +12,18 @@ add_executable(dama_gui
   input/keyboard.cpp
   renderer/board_renderer.cpp
   renderer/camera.h
+  renderer/piece_renderer.cpp
+  renderer/piece_renderer.h
+  renderer/shader.cpp
+  renderer/shader.h
   ui/ui.cpp
 )
-target_include_directories(dama_gui PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+target_include_directories(dama_gui PRIVATE 
+  ${CMAKE_CURRENT_SOURCE_DIR}
+  ${CMAKE_CURRENT_SOURCE_DIR}/../..
+)
 # glad.h fornisce le dichiarazioni OpenGL: impedisce a GLFW e ImGui di includere <GL/gl.h>.
 target_compile_definitions(dama_gui PRIVATE GLFW_INCLUDE_NONE IMGUI_IMPL_OPENGL_LOADER_GLAD)
 target_link_libraries(dama_gui PRIVATE
-  glfw glad::glad imgui::imgui glm::glm OpenGL::GL
+  dama_engine glfw glad::glad imgui::imgui glm::glm OpenGL::GL
 )

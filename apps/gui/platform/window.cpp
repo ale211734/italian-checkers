@@ -10,12 +10,13 @@ bool Window::create(int width, int height, const std::string& title) {
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
-
+    // create window
     window_ = glfwCreateWindow(width, height, title.c_str(), nullptr, nullptr);
     if (!window_) {
         std::fprintf(stderr, "Window::create: glfwCreateWindow failed\n");
         return false;
     }
+    // assign the current context
     glfwMakeContextCurrent(window_);
     glfwSwapInterval(1);  // vsync
 

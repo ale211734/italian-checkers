@@ -1,0 +1,12 @@
+{
+  "name": "italian-checkers",
+  "version-string": "0.1.0",
+  "builtin-baseline": "11ace808cc8a3a941f386e33726b992b22ba9e5a",
+  "dependencies": [
+    "glfw3",
+    "glad",
+    "glm",
+    { "name": "imgui", "features": ["glfw-binding", "opengl3-binding"] },
+    "gtest"
+  ]
+}

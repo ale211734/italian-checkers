@@ -5,9 +5,11 @@
 #include "platform/window.h"
 #include "renderer/camera.h"
 #include "renderer/board_renderer.h"
+#include "renderer/piece_renderer.h"
 #include "ui/ui.h"
+#include "core/engine.h"
+#include <memory>
 
-// Composizione delle parti e game loop.
 class App {
 public:
     bool init();
@@ -23,9 +25,11 @@ private:
     Ui ui_;
     Camera camera_;
 
-    // Stato di gioco (demo: cursore su griglia 8x8).
     int cursorR_ = 0;
     int cursorC_ = 0;
     std::string lastEvent_;
-    unique_ptr<BoardRenderer> board;
+
+    std::unique_ptr<BoardRenderer> boardRenderer_;
+    std::unique_ptr<PieceRenderer> pieceRenderer_;
+    dama::Position position_;
 };

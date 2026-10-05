@@ -11,6 +11,7 @@ enum class Piece { None, Black, White, BlackKing, WhiteKing };
 constexpr int kBoardSize = 8;
 
 struct Position {
+    // board 8x8 of piece
     std::array<std::array<Piece, kBoardSize>, kBoardSize> board{};
     bool black_to_move = true;
 };
