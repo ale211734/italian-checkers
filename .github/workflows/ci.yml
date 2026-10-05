@@ -25,8 +25,8 @@ jobs:
                 
             - name:
               run: > #si usa per uno stesso comando scritto su due righe diverse
-              cmake -B build -S .
-              -DCMAKE_TOOLCHAIN_FILE=${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake
+                  cmake -B build -S .
+                  -DCMAKE_TOOLCHAIN_FILE=${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake
              
             # fa il build del progetto
             - name: Building Project
