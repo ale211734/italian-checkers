@@ -33,6 +33,6 @@ jobs:
       - name: Configure CMake
         run: >
           cmake -B build -S .
-          -DCMAKE_TOOLCHAIN_FILE=${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake
+             -DCMAKE_TOOLCHAIN_FILE=vcpkg/scripts/buildsystems/vcpkg.cmake
       - name: Building Project
         run: cmake --build build
