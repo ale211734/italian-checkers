@@ -7,13 +7,9 @@ on: [push]
 jobs:
     # Nome del job su windows il test verrà fatto con una macchina windows
     build:
-       # GitHub CI eseguirà il job sia su Windows che su Ubuntu
-        strategy:
-            matrix:
-                os: [windows-latest, ubuntu-latest]
-        
+             
         # usa prima la wm di windows-latest e poi di ubuntu-latest
-        runs-on: ${{ matrix.os }} 
+        runs-on: windows-latest 
         
         # descrive le operazioni che saranno fatte in ordine sequenziale
         steps:
@@ -37,4 +33,27 @@ jobs:
             - name: Building Project
               run: cmake --build build --config Release 
         
+    build-linux:
+        # Qui diciamo a GitHub di usare il TUO container 
+        runs-on: ubuntu-latest    
+        container:
+            image: ale211734/italian-checker:latest
         
+        steps:
+         - name: Checkout-damaItaliana
+           uses: actions/checkout@v5
+           
+        #installiamo il vcpkg e faccio il boostrap
+            - name: Setup vcpkg
+              run: | # dice di considerare tutte le linee che ci sono sotto in ordine sequenziale
+                git clone https://github.com/microsoft/vcpkg.git # scarica il vcpkg
+                ./vcpkg/bootstrap-vcpkg.sh
+                
+            - name:
+              run: > #si usa per uno stesso comando scritto su due righe diverse
+                  cmake -B build -S .
+                  -DCMAKE_TOOLCHAIN_FILE=${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake
+             
+            # fa il build del progetto
+            - name: Building Project
+              run: cmake --build build --config Release 
