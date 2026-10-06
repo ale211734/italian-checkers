@@ -41,7 +41,7 @@ jobs:
         
         steps:
             - name: Checkout-damaItaliana
-               uses: actions/checkout@v5
+              uses: actions/checkout@v5
                
             #installiamo il vcpkg e faccio il boostrap
                 - name: Setup vcpkg
