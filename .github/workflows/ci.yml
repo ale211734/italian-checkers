@@ -24,6 +24,12 @@ jobs:
     container:
       image: ale211734/italian-checker:latest
     steps:
+      # 1. Installa i compilatori necessari (fondamentale)
+      - name: Install dependencies
+        run: |
+          apt-get update
+          apt-get install -y build-essential cmake git
+    
       - name: Checkout
         uses: actions/checkout@v5
       - name: Setup vcpkg
