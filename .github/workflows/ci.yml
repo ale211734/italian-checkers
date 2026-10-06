@@ -2,6 +2,16 @@ name: CI-damaItaliana
 
 on: [push]
 
+# Imposta una variabile d'ambiente, valida per tutti i job del workflow, che dice a vcpkg 
+# dove salvare e da dove leggere i pacchetti già compilati 
+# (la "binary cache").
+# Quando vcpkg installa un pacchetto (es. glfw3), calcola un hash (l'"ABI") a partire dal codice sorgente, dal compilatore, dalle opzioni e dal triplet. Poi:
+# Cerca nella binary cache un archivio con quell'hash. Se c'è, lo estrae e salta la compilazione.
+# Se non c'è, compila il pacchetto e salva l'archivio nella cache per le volte successive.
+
+env:
+  VCPKG_DEFAULT_BINARY_CACHE: ${{ github.workspace }}/.vcpkg-cache
+
 jobs:
   build-windows:
     runs-on: windows-latest
