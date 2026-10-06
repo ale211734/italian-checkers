@@ -25,12 +25,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5
       
-      # Installiamo le dipendenze di sistema necessarie per compilare
-      # librerie come GLFW, OpenGL, e i tool di build
+      # Installiamo tutte le dipendenze di sistema richieste da vcpkg
       - name: Install System Dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y build-essential cmake git automake libtool m4 pkg-config \
+          sudo apt-get install -y build-essential cmake git automake libtool m4 pkg-config autoconf autoconf-archive \
           libx11-dev libxcursor-dev libxrandr-dev libxinerama-dev libxi-dev libxext-dev libgl1-mesa-dev
       
       - name: Setup vcpkg
