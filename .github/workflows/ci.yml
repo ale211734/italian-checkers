@@ -21,24 +21,28 @@ jobs:
 
   build-linux:
     runs-on: ubuntu-latest
-    container:
-      image: ale211734/italian-checker:latest
     steps:
-      # 1. Installa i compilatori necessari (fondamentale)
-      - name: Install dependencies
-        run: |
-          apt-get update
-          apt-get install -y build-essential cmake git
-    
       - name: Checkout
         uses: actions/checkout@v5
+      
+      # Installiamo le dipendenze di sistema necessarie per compilare
+      # librerie come GLFW, OpenGL, e i tool di build
+      - name: Install System Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential cmake git automake libtool m4 pkg-config \
+          libx11-dev libxcursor-dev libxrandr-dev libxinerama-dev libxi-dev libxext-dev libgl1-mesa-dev
+      
       - name: Setup vcpkg
         run: |
           git clone https://github.com/microsoft/vcpkg.git
           ./vcpkg/bootstrap-vcpkg.sh
+          
       - name: Configure CMake
         run: >
           cmake -B build -S .
-             -DCMAKE_TOOLCHAIN_FILE=vcpkg/scripts/buildsystems/vcpkg.cmake
+          -DCMAKE_TOOLCHAIN_FILE=$GITHUB_WORKSPACE/vcpkg/scripts/buildsystems/vcpkg.cmake
+          -DVCPKG_TARGET_TRIPLET=x64-linux
+          
       - name: Building Project
         run: cmake --build build
