@@ -1,57 +1,68 @@
+# Nome del workflow, visibile nella tab Actions di GitHub
 name: CI-damaItaliana
 
+# Il workflow si attiva automaticamente ad ogni push sul repository
 on: [push]
 
-# Imposta una variabile d'ambiente, valida per tutti i job del workflow, che dice a vcpkg 
-# dove salvare e da dove leggere i pacchetti già compilati 
-# (la "binary cache").
-# Quando vcpkg installa un pacchetto (es. glfw3), calcola un hash (l'"ABI") a partire dal codice sorgente, dal compilatore, dalle opzioni e dal triplet. Poi:
-# Cerca nella binary cache un archivio con quell'hash. Se c'è, lo estrae e salta la compilazione.
-# Se non c'è, compila il pacchetto e salva l'archivio nella cache per le volte successive.
-
-env:
-  VCPKG_DEFAULT_BINARY_CACHE: ${{ github.workspace }}/.vcpkg-cache
-
+# Inizia la sezione che contiene i lavori (jobs) da eseguire
 jobs:
+  # Definisce un job chiamato 'build-windows'
   build-windows:
-    runs-on: windows-latest
+    runs-on: windows-latest # Utilizza l'ambiente Windows fornito da GitHub
     steps:
-      - name: Checkout
+      - name: Checkout # Scarica i file sorgenti del repository
+        # Se fai push sul branch main: GitHub Actions scarica il main.
+        # Se fai push sul branch sviluppo: GitHub Actions scarica lo sviluppo.
         uses: actions/checkout@v5
-      - name: Setup vcpkg
+      - name: Setup vcpkg # Clona vcpkg e esegue lo script di inizializzazione per Windows
         run: |
           git clone https://github.com/microsoft/vcpkg.git
           .\vcpkg\bootstrap-vcpkg.bat
-      - name: Configure CMake
+      - name: Configure CMake # Configura il progetto collegando la toolchain di vcpkg
         run: >
           cmake -B build -S .
           -DCMAKE_TOOLCHAIN_FILE=${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake
-      - name: Building Project
+      - name: Building Project # Esegue la compilazione in modalità Release
         run: cmake --build build --config Release
 
+  # Definisce un job chiamato 'build-linux'
   build-linux:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest # Utilizza l'ambiente Linux fornito da GitHub
     steps:
-      - name: Checkout
+      - name: Checkout # Scarica i file sorgenti del repository
         uses: actions/checkout@v5
+
+      # Memorizza i download e i file build di vcpkg per velocizzare le compilazioni successive
+      - name: Cache vcpkg
+        uses: actions/cache@v4
+        with:
+          path: |
+            vcpkg/downloads
+            vcpkg/buildtrees
+          key: ${{ runner.os }}-vcpkg-${{ hashFiles('vcpkg.json') }}
+          restore-keys: |
+            ${{ runner.os }}-vcpkg-
       
-      # Installiamo tutte le dipendenze di sistema richieste da vcpkg
+      # Installa le dipendenze software necessarie nel sistema operativo Ubuntu
       - name: Install System Dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y build-essential cmake git automake libtool m4 pkg-config autoconf autoconf-archive \
           libx11-dev libxcursor-dev libxrandr-dev libxinerama-dev libxi-dev libxext-dev libgl1-mesa-dev
       
+      # Clona vcpkg (se non esiste già) ed esegue lo script di inizializzazione per Linux
       - name: Setup vcpkg
         run: |
-          git clone https://github.com/microsoft/vcpkg.git
+          if [ ! -d "vcpkg" ]; then git clone https://github.com/microsoft/vcpkg.git; fi
           ./vcpkg/bootstrap-vcpkg.sh
           
+      # Configura il progetto CMake puntando alla toolchain di vcpkg installata localmente
       - name: Configure CMake
         run: >
           cmake -B build -S .
           -DCMAKE_TOOLCHAIN_FILE=$GITHUB_WORKSPACE/vcpkg/scripts/buildsystems/vcpkg.cmake
           -DVCPKG_TARGET_TRIPLET=x64-linux
           
+      # Compila l'intero progetto
       - name: Building Project
         run: cmake --build build
