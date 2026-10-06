@@ -1,7 +1,9 @@
 # Target interfaccia con le opzioni di warning comuni.
 add_library(dama_warnings INTERFACE)
 target_compile_options(dama_warnings INTERFACE
-  $<$<COMPILE_LANGUAGE:CXX>:/W4>
+  $<$<CXX_COMPILER_ID:MSVC>:/W4>
+  $<$<CXX_COMPILER_ID:GNU>:-Wall -Wextra>
+  $<$<CXX_COMPILER_ID:Clang>:-Wall -Wextra>
 )
 
 add_library(dama_engine
