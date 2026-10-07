@@ -8,26 +8,26 @@
       "architecture": "x64",
       "binaryDir": "${sourceDir}/build/${presetName}",
       "cacheVariables": {
-        "CMAKE_TOOLCHAIN_FILE": "E:/dev/vcpkg/scripts/buildsystems/vcpkg.cmake",
+        "CMAKE_TOOLCHAIN_FILE": "E:/vcpkg/scripts/buildsystems/vcpkg.cmake",
         "VCPKG_TARGET_TRIPLET": "x64-windows"
       }
     }
   ],
   "buildPresets": [
     {
-      "name": "vs2022-debug",
+      "name": "Debug",
       "configurePreset": "vs2022",
       "configuration": "Debug"
     },
     {
-      "name": "vs2022-release",
-      "configurePreset": "vs2022",
+      "name": "Release",
+      "configurePreset": "vs2022", 
       "configuration": "Release"
     }
   ],
   "testPresets": [
     {
-      "name": "vs2022-debug",
+      "name": "Debug",
       "configurePreset": "vs2022",
       "configuration": "Debug",
       "output": { "outputOnFailure": true }
