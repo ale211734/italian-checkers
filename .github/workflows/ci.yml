@@ -31,6 +31,14 @@ jobs:
     steps:
       - name: Checkout # Scarica i file sorgenti del repository
         uses: actions/checkout@v5
+        
+        
+        # Installa le dipendenze software necessarie nel sistema operativo Ubuntu
+      - name: Install System Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential cmake git automake libtool m4 pkg-config autoconf autoconf-archive \
+          libx11-dev libxcursor-dev libxrandr-dev libxinerama-dev libxi-dev libxext-dev libgl1-mesa-dev
 
       # Memorizza i download e i file build di vcpkg per velocizzare le compilazioni successive
       - name: Cache vcpkg
@@ -42,14 +50,7 @@ jobs:
           key: ${{ runner.os }}-vcpkg-${{ hashFiles('vcpkg.json') }}
           restore-keys: |
             ${{ runner.os }}-vcpkg-
-      
-      # Installa le dipendenze software necessarie nel sistema operativo Ubuntu
-      - name: Install System Dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y build-essential cmake git automake libtool m4 pkg-config autoconf autoconf-archive \
-          libx11-dev libxcursor-dev libxrandr-dev libxinerama-dev libxi-dev libxext-dev libgl1-mesa-dev
-      
+            
       # Clona vcpkg (se non esiste già) ed esegue lo script di inizializzazione per Linux
       - name: Setup vcpkg
         run: |
