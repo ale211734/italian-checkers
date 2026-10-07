@@ -4,66 +4,108 @@ name: CI-damaItaliana
 # Il workflow si attiva automaticamente ad ogni push sul repository
 on: [push]
 
+# Variabili d'ambiente valide per tutti i job
+env:
+  # Cartella in cui vcpkg salva i pacchetti già compilati (binary cache).
+  # Sta dentro il workspace ma FUORI dalla cartella vcpkg/, quindi
+  # il ripristino della cache non interferisce con il git clone di vcpkg.
+  VCPKG_DEFAULT_BINARY_CACHE: ${{ github.workspace }}/vcpkg_cache
+
 # Inizia la sezione che contiene i lavori (jobs) da eseguire
 jobs:
-  # Definisce un job chiamato 'build-windows'
+
+  # ---------------------------------------------------------------
+  # Job Windows
+  # ---------------------------------------------------------------
   build-windows:
     runs-on: windows-latest # Utilizza l'ambiente Windows fornito da GitHub
     steps:
-      - name: Checkout # Scarica i file sorgenti del repository
-        # Se fai push sul branch main: GitHub Actions scarica il main.
-        # Se fai push sul branch sviluppo: GitHub Actions scarica lo sviluppo.
+      # Scarica i file sorgenti del repository
+      # (push su main -> scarica main; push su sviluppo -> scarica sviluppo)
+      - name: Checkout
         uses: actions/checkout@v5
-      - name: Setup vcpkg # Clona vcpkg e esegue lo script di inizializzazione per Windows
+
+      # vcpkg richiede che la cartella della binary cache esista già
+      - name: Create vcpkg binary cache dir
+        shell: bash
+        run: mkdir -p "$VCPKG_DEFAULT_BINARY_CACHE"
+
+      # Ripristina i pacchetti già compilati dalle esecuzioni precedenti.
+      # - key: se corrisponde esattamente (stesso vcpkg.json) è un cache hit
+      # - restore-keys: se non c'è corrispondenza esatta, usa la cache più recente
+      #   con lo stesso prefisso; vcpkg ricompila solo ciò che è cambiato
+      # A fine job, se non c'è stato hit esatto, la cache viene salvata in automatico
+      - name: Cache vcpkg binary cache
+        uses: actions/cache@v4
+        with:
+          path: ${{ github.workspace }}/vcpkg_cache
+          key: ${{ runner.os }}-vcpkg-${{ hashFiles('vcpkg.json') }}
+          restore-keys: |
+            ${{ runner.os }}-vcpkg-
+
+      # Clona vcpkg ed esegue lo script di inizializzazione per Windows
+      - name: Setup vcpkg
         run: |
           git clone https://github.com/microsoft/vcpkg.git
           .\vcpkg\bootstrap-vcpkg.bat
-      - name: Configure CMake # Configura il progetto collegando la toolchain di vcpkg
+
+      # Configura il progetto collegando la toolchain di vcpkg
+      # (qui vcpkg installa le dipendenze, usando la binary cache se disponibile)
+      - name: Configure CMake
         run: >
           cmake -B build -S .
           -DCMAKE_TOOLCHAIN_FILE=${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake
-      - name: Building Project # Esegue la compilazione in modalità Release
+
+      # Esegue la compilazione in modalità Release
+      - name: Building Project
         run: cmake --build build --config Release
 
-  # Definisce un job chiamato 'build-linux'
+  # ---------------------------------------------------------------
+  # Job Linux
+  # ---------------------------------------------------------------
   build-linux:
     runs-on: ubuntu-latest # Utilizza l'ambiente Linux fornito da GitHub
     steps:
-      - name: Checkout # Scarica i file sorgenti del repository
+      # Scarica i file sorgenti del repository
+      - name: Checkout
         uses: actions/checkout@v5
-        
-        
-        # Installa le dipendenze software necessarie nel sistema operativo Ubuntu
+
+      # Installa le dipendenze software necessarie nel sistema operativo Ubuntu
       - name: Install System Dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y build-essential cmake git automake libtool m4 pkg-config autoconf autoconf-archive \
           libx11-dev libxcursor-dev libxrandr-dev libxinerama-dev libxi-dev libxext-dev libgl1-mesa-dev
 
-      # Memorizza i download e i file build di vcpkg per velocizzare le compilazioni successive
-      - name: Cache vcpkg
+      # vcpkg richiede che la cartella della binary cache esista già
+      - name: Create vcpkg binary cache dir
+        run: mkdir -p "$VCPKG_DEFAULT_BINARY_CACHE"
+
+      # Ripristina i pacchetti già compilati dalle esecuzioni precedenti
+      # (stessa logica di key / restore-keys del job Windows)
+      - name: Cache vcpkg binary cache
         uses: actions/cache@v4
         with:
-          path: |
-            vcpkg/downloads
-            vcpkg/buildtrees
+          path: ${{ github.workspace }}/vcpkg_cache
           key: ${{ runner.os }}-vcpkg-${{ hashFiles('vcpkg.json') }}
           restore-keys: |
             ${{ runner.os }}-vcpkg-
-            
-      # Clona vcpkg (se non esiste già) ed esegue lo script di inizializzazione per Linux
+
+      # Clona vcpkg ed esegue lo script di inizializzazione per Linux.
+      # Il clone è incondizionato: la cache non tocca la cartella vcpkg/,
+      # quindi nel runner pulito la cartella non esiste ancora.
       - name: Setup vcpkg
         run: |
-          if [ ! -d "vcpkg" ]; then git clone https://github.com/microsoft/vcpkg.git; fi
+          git clone https://github.com/microsoft/vcpkg.git
           ./vcpkg/bootstrap-vcpkg.sh
-          
-      # Configura il progetto CMake puntando alla toolchain di vcpkg installata localmente
+
+      # Configura il progetto CMake puntando alla toolchain di vcpkg
       - name: Configure CMake
         run: >
           cmake -B build -S .
           -DCMAKE_TOOLCHAIN_FILE=$GITHUB_WORKSPACE/vcpkg/scripts/buildsystems/vcpkg.cmake
           -DVCPKG_TARGET_TRIPLET=x64-linux
-          
+
       # Compila l'intero progetto
       - name: Building Project
         run: cmake --build build
