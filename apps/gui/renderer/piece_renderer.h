@@ -9,8 +9,8 @@
 class PieceRenderer {
 public:
     bool init();
-    void shutdown();
-    void render(const Camera& camera, const dama::Position& position);
+    void shutdown() ;
+    void render(const Camera& camera, const dama::GameState& position) ;
 
 private:
     Shader shader_;

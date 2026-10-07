@@ -18,6 +18,7 @@ add_executable(dama_gui
   renderer/shader.h
   ui/ui.cpp
 )
+
 target_include_directories(dama_gui PRIVATE 
   ${CMAKE_CURRENT_SOURCE_DIR}
   ${CMAKE_CURRENT_SOURCE_DIR}/../..

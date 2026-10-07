@@ -31,5 +31,5 @@ private:
 
     std::unique_ptr<BoardRenderer> boardRenderer_;
     std::unique_ptr<PieceRenderer> pieceRenderer_;
-    dama::Position position_;
+    dama::GameState gameState;
 };

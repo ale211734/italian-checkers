@@ -31,6 +31,7 @@ void main() {
 
 }  // namespace
 
+
 bool PieceRenderer::init() {
     if (!shader_.load(kVertexSrc, kFragmentSrc)) return false;
 
@@ -77,7 +78,7 @@ void PieceRenderer::shutdown() {
     vertexCount_ = 0;
 }
 
-void PieceRenderer::render(const Camera& camera, const dama::Position& position) {
+void PieceRenderer::render(const Camera& camera, const dama::GameState& gameState) {
     shader_.use();
 
     glm::mat4 mvp = camera.viewProjectionMatrix();
@@ -90,7 +91,7 @@ void PieceRenderer::render(const Camera& camera, const dama::Position& position)
 
     for (int r = 0; r < dama::kBoardSize; ++r) {
         for (int c = 0; c < dama::kBoardSize; ++c) {
-            dama::Piece p = position.board[r][c];
+            dama::Piece p = gameState.board[r][c];
             if (p == dama::Piece::None) continue;
 
             // Calcolo posizione mondiale del centro della casella (r, c)

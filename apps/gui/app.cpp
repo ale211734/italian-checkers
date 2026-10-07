@@ -3,6 +3,8 @@
 #include <glad/glad.h>
 #include <imgui.h>
 #include <imgui_impl_opengl3.h>
+#include "../../core/game_state.h"
+#include "../../core/engine.h"
 
 namespace {
 
@@ -21,8 +23,7 @@ void keyCallback(GLFWwindow* window, int key, int /*scancode*/, int action, int 
 bool App::init() {
     boardRenderer_ = std::make_unique<BoardRenderer>();
     pieceRenderer_ = std::make_unique<PieceRenderer>();
-    position_ = dama::initial_position();
-
+    gameState = dama::GameState::initial();
     if (!glfw_.init()) return false;
     if (!window_.create(1280, 720, "Italian Checkers")) return false;
 
@@ -58,7 +59,7 @@ void App::frame() {
     glClear(GL_COLOR_BUFFER_BIT);
 
     boardRenderer_->render(camera_, cursorR_, cursorC_);
-    pieceRenderer_->render(camera_, position_);
+    pieceRenderer_->render(camera_, gameState);
 
     ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
     window_.swapBuffers();

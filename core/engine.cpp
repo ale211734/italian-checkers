@@ -11,8 +11,8 @@ bool is_king(Piece p) { return p == Piece::BlackKing || p == Piece::WhiteKing; }
 
 }  // namespace
 
-Position initial_position() {
-    Position p;
+GameState initial_position() {
+    GameState p;
     for (int r = 0; r < 3; ++r)
         for (int c = 0; c < kBoardSize; ++c)
             if ((r + c) % 2 == 0) p.board[r][c] = Piece::Black;
@@ -22,7 +22,7 @@ Position initial_position() {
     return p;
 }
  
-std::vector<Move> legal_moves(const Position& p, int r, int c) {
+std::vector<Move> legal_moves(const GameState& p, int r, int c) {
     std::vector<Move> moves;
     const Piece pc = p.board[r][c];
     if (pc == Piece::None) return moves;
@@ -55,7 +55,7 @@ std::vector<Move> legal_moves(const Position& p, int r, int c) {
     return moves;
 }
 
-std::vector<Move> all_legal_moves(const Position& p) {
+std::vector<Move> all_legal_moves(const GameState& p) {
     std::vector<Move> moves;
     const bool black = p.black_to_move;
     for (int r = 0; r < kBoardSize; ++r)
@@ -75,8 +75,8 @@ std::vector<Move> all_legal_moves(const Position& p) {
     return moves;
 }
 
-Position apply_move(const Position& p, const Move& m) {
-    Position q = p;
+GameState apply_move(const GameState& p, const Move& m) {
+    GameState q = p;
     Piece pc = q.board[m.from_r][m.from_c];
     q.board[m.from_r][m.from_c] = Piece::None;
     if (m.capture) q.board[m.cap_r][m.cap_c] = Piece::None;
@@ -86,7 +86,7 @@ Position apply_move(const Position& p, const Move& m) {
     return q;
 }
 
-bool has_moves(const Position& p, bool black) {
+bool has_moves(const GameState& p, bool black) {
     for (int r = 0; r < kBoardSize; ++r)
         for (int c = 0; c < kBoardSize; ++c) {
             const Piece pc = p.board[r][c];
@@ -96,9 +96,9 @@ bool has_moves(const Position& p, bool black) {
     return false;
 }
 
-bool is_over(const Position& p) { return !has_moves(p, p.black_to_move); }
+bool is_over(const GameState& p) { return !has_moves(p, p.black_to_move); }
 
-std::string to_string(const Position& p) {
+std::string to_string(const GameState& p) {
     std::string s;
     for (int r = 0; r < kBoardSize; ++r) {
         for (int c = 0; c < kBoardSize; ++c) {

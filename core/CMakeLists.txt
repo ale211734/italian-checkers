@@ -8,6 +8,7 @@ target_compile_options(dama_warnings INTERFACE
 
 add_library(dama_engine
   engine.cpp
+  game_state.cpp
 )
 add_library(dama::engine ALIAS dama_engine)
 
