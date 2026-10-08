@@ -91,7 +91,7 @@ void PieceRenderer::render(const Camera& camera, const dama::GameState& gameStat
 
     for (int r = 0; r < dama::kBoardSize; ++r) {
         for (int c = 0; c < dama::kBoardSize; ++c) {
-            dama::Piece p = gameState.board[r][c];
+            dama::Piece p = gameState.getPiece({r, c});
             if (p == dama::Piece::None) continue;
 
             // Calcolo posizione mondiale del centro della casella (r, c)
