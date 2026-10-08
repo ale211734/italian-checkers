@@ -1,0 +1,456 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{073A1CBE-0F0E-33F9-B1CC-BA9430FF038C}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <VcpkgEnabled>false</VcpkgEnabled>
+    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>dama_gui</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="do_not_import_user.props" Condition="exists('do_not_import_user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">G:\italian_checkers\build_clean\apps\gui\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">dama_gui.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">dama_gui</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">G:\italian_checkers\build_clean\apps\gui\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">dama_gui.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">dama_gui</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">G:\italian_checkers\build_clean\apps\gui\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">dama_gui.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">dama_gui</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">G:\italian_checkers\build_clean\apps\gui\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">dama_gui.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">dama_gui</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>G:\italian_checkers\apps\gui;G:\italian_checkers\apps\gui\..\..;G:\italian_checkers\core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "G:/italian_checkers/build_clean/vcpkg_installed/x64-windows/include"</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <BufferSecurityCheck></BufferSecurityCheck>
+      <CallingConvention></CallingConvention>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <FloatingPointModel></FloatingPointModel>
+      <ForceConformanceInForLoopScope></ForceConformanceInForLoopScope>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RemoveUnreferencedCodeData></RemoveUnreferencedCodeData>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <TreatWChar_tAsBuiltInType></TreatWChar_tAsBuiltInType>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;GLFW_INCLUDE_NONE;IMGUI_IMPL_OPENGL_LOADER_GLAD;GLFW_DLL;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;GLFW_INCLUDE_NONE;IMGUI_IMPL_OPENGL_LOADER_GLAD;GLFW_DLL;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>G:\italian_checkers\apps\gui;G:\italian_checkers\apps\gui\..\..;G:\italian_checkers\core;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>G:\italian_checkers\apps\gui;G:\italian_checkers\apps\gui\..\..;G:\italian_checkers\core;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message></Message>
+      <Command>setlocal
+E:\vcpkg\vcpkg.exe z-applocal --target-binary=G:/italian_checkers/build_clean/apps/gui/Debug/dama_gui.exe --installed-bin-dir=G:/italian_checkers/build_clean/vcpkg_installed/x64-windows/debug/bin
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>..\..\core\Debug\dama_engine.lib;..\..\vcpkg_installed\x64-windows\debug\lib\glad.lib;..\..\vcpkg_installed\x64-windows\debug\lib\imguid.lib;..\..\vcpkg_installed\x64-windows\debug\lib\glm.lib;opengl32.lib;..\..\vcpkg_installed\x64-windows\debug\lib\glfw3dll.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <DataExecutionPrevention></DataExecutionPrevention>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImageHasSafeExceptionHandlers></ImageHasSafeExceptionHandlers>
+      <ImportLibrary>G:/italian_checkers/build_clean/apps/gui/Debug/dama_gui.lib</ImportLibrary>
+      <LinkErrorReporting></LinkErrorReporting>
+      <ProgramDataBaseFile>G:/italian_checkers/build_clean/apps/gui/Debug/dama_gui.pdb</ProgramDataBaseFile>
+      <RandomizedBaseAddress></RandomizedBaseAddress>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>G:\italian_checkers\apps\gui;G:\italian_checkers\apps\gui\..\..;G:\italian_checkers\core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "G:/italian_checkers/build_clean/vcpkg_installed/x64-windows/include"</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <BufferSecurityCheck></BufferSecurityCheck>
+      <CallingConvention></CallingConvention>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <FloatingPointModel></FloatingPointModel>
+      <ForceConformanceInForLoopScope></ForceConformanceInForLoopScope>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RemoveUnreferencedCodeData></RemoveUnreferencedCodeData>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <TreatWChar_tAsBuiltInType></TreatWChar_tAsBuiltInType>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;GLFW_INCLUDE_NONE;IMGUI_IMPL_OPENGL_LOADER_GLAD;GLFW_DLL;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;GLFW_INCLUDE_NONE;IMGUI_IMPL_OPENGL_LOADER_GLAD;GLFW_DLL;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>G:\italian_checkers\apps\gui;G:\italian_checkers\apps\gui\..\..;G:\italian_checkers\core;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>G:\italian_checkers\apps\gui;G:\italian_checkers\apps\gui\..\..;G:\italian_checkers\core;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message></Message>
+      <Command>setlocal
+E:\vcpkg\vcpkg.exe z-applocal --target-binary=G:/italian_checkers/build_clean/apps/gui/Release/dama_gui.exe --installed-bin-dir=G:/italian_checkers/build_clean/vcpkg_installed/x64-windows/bin
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>..\..\core\Release\dama_engine.lib;..\..\vcpkg_installed\x64-windows\lib\glad.lib;..\..\vcpkg_installed\x64-windows\lib\imgui.lib;..\..\vcpkg_installed\x64-windows\lib\glm.lib;opengl32.lib;..\..\vcpkg_installed\x64-windows\lib\glfw3dll.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <DataExecutionPrevention></DataExecutionPrevention>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImageHasSafeExceptionHandlers></ImageHasSafeExceptionHandlers>
+      <ImportLibrary>G:/italian_checkers/build_clean/apps/gui/Release/dama_gui.lib</ImportLibrary>
+      <LinkErrorReporting></LinkErrorReporting>
+      <ProgramDataBaseFile>G:/italian_checkers/build_clean/apps/gui/Release/dama_gui.pdb</ProgramDataBaseFile>
+      <RandomizedBaseAddress></RandomizedBaseAddress>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>G:\italian_checkers\apps\gui;G:\italian_checkers\apps\gui\..\..;G:\italian_checkers\core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "G:/italian_checkers/build_clean/vcpkg_installed/x64-windows/include"</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <BufferSecurityCheck></BufferSecurityCheck>
+      <CallingConvention></CallingConvention>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <FloatingPointModel></FloatingPointModel>
+      <ForceConformanceInForLoopScope></ForceConformanceInForLoopScope>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RemoveUnreferencedCodeData></RemoveUnreferencedCodeData>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <TreatWChar_tAsBuiltInType></TreatWChar_tAsBuiltInType>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;GLFW_INCLUDE_NONE;IMGUI_IMPL_OPENGL_LOADER_GLAD;GLFW_DLL;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;GLFW_INCLUDE_NONE;IMGUI_IMPL_OPENGL_LOADER_GLAD;GLFW_DLL;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>G:\italian_checkers\apps\gui;G:\italian_checkers\apps\gui\..\..;G:\italian_checkers\core;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>G:\italian_checkers\apps\gui;G:\italian_checkers\apps\gui\..\..;G:\italian_checkers\core;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message></Message>
+      <Command>setlocal
+E:\vcpkg\vcpkg.exe z-applocal --target-binary=G:/italian_checkers/build_clean/apps/gui/MinSizeRel/dama_gui.exe --installed-bin-dir=G:/italian_checkers/build_clean/vcpkg_installed/x64-windows/bin
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>..\..\core\MinSizeRel\dama_engine.lib;..\..\vcpkg_installed\x64-windows\lib\glad.lib;..\..\vcpkg_installed\x64-windows\lib\imgui.lib;..\..\vcpkg_installed\x64-windows\lib\glm.lib;opengl32.lib;..\..\vcpkg_installed\x64-windows\lib\glfw3dll.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <DataExecutionPrevention></DataExecutionPrevention>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImageHasSafeExceptionHandlers></ImageHasSafeExceptionHandlers>
+      <ImportLibrary>G:/italian_checkers/build_clean/apps/gui/MinSizeRel/dama_gui.lib</ImportLibrary>
+      <LinkErrorReporting></LinkErrorReporting>
+      <ProgramDataBaseFile>G:/italian_checkers/build_clean/apps/gui/MinSizeRel/dama_gui.pdb</ProgramDataBaseFile>
+      <RandomizedBaseAddress></RandomizedBaseAddress>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>G:\italian_checkers\apps\gui;G:\italian_checkers\apps\gui\..\..;G:\italian_checkers\core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "G:/italian_checkers/build_clean/vcpkg_installed/x64-windows/include"</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <BufferSecurityCheck></BufferSecurityCheck>
+      <CallingConvention></CallingConvention>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <FloatingPointModel></FloatingPointModel>
+      <ForceConformanceInForLoopScope></ForceConformanceInForLoopScope>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RemoveUnreferencedCodeData></RemoveUnreferencedCodeData>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <TreatWChar_tAsBuiltInType></TreatWChar_tAsBuiltInType>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;GLFW_INCLUDE_NONE;IMGUI_IMPL_OPENGL_LOADER_GLAD;GLFW_DLL;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;GLFW_INCLUDE_NONE;IMGUI_IMPL_OPENGL_LOADER_GLAD;GLFW_DLL;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>G:\italian_checkers\apps\gui;G:\italian_checkers\apps\gui\..\..;G:\italian_checkers\core;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>G:\italian_checkers\apps\gui;G:\italian_checkers\apps\gui\..\..;G:\italian_checkers\core;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message></Message>
+      <Command>setlocal
+E:\vcpkg\vcpkg.exe z-applocal --target-binary=G:/italian_checkers/build_clean/apps/gui/RelWithDebInfo/dama_gui.exe --installed-bin-dir=G:/italian_checkers/build_clean/vcpkg_installed/x64-windows/bin
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>..\..\core\RelWithDebInfo\dama_engine.lib;..\..\vcpkg_installed\x64-windows\lib\glad.lib;..\..\vcpkg_installed\x64-windows\lib\imgui.lib;..\..\vcpkg_installed\x64-windows\lib\glm.lib;opengl32.lib;..\..\vcpkg_installed\x64-windows\lib\glfw3dll.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <DataExecutionPrevention></DataExecutionPrevention>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImageHasSafeExceptionHandlers></ImageHasSafeExceptionHandlers>
+      <ImportLibrary>G:/italian_checkers/build_clean/apps/gui/RelWithDebInfo/dama_gui.lib</ImportLibrary>
+      <LinkErrorReporting></LinkErrorReporting>
+      <ProgramDataBaseFile>G:/italian_checkers/build_clean/apps/gui/RelWithDebInfo/dama_gui.pdb</ProgramDataBaseFile>
+      <RandomizedBaseAddress></RandomizedBaseAddress>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="G:\italian_checkers\apps\gui\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule G:/italian_checkers/apps/gui/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SG:/italian_checkers -BG:/italian_checkers/build_clean --check-stamp-file G:/italian_checkers/build_clean/apps/gui/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\CMake\share\cmake-4.3\Modules\CMakeFindDependencyMacro.cmake;C:\Program Files\CMake\share\cmake-4.3\Modules\CheckCXXSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-4.3\Modules\CheckIncludeFileCXX.cmake;C:\Program Files\CMake\share\cmake-4.3\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-4.3\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-4.3\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-4.3\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-4.3\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-4.3\Modules\Internal\CheckSourceCompiles.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\glad\gladConfig.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\glad\gladConfigVersion.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\glad\gladTargets-debug.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\glad\gladTargets-release.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\glad\gladTargets.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\glfw3\glfw3Config.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\glfw3\glfw3ConfigVersion.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\glfw3\glfw3Targets-debug.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\glfw3\glfw3Targets-release.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\glfw3\glfw3Targets.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\glm\glmConfig-debug.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\glm\glmConfig-release.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\glm\glmConfig.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\glm\glmConfigVersion.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\imgui\imgui-config.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\imgui\imgui-targets-debug.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\imgui\imgui-targets-release.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\imgui\imgui-targets.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">G:\italian_checkers\build_clean\apps\gui\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule G:/italian_checkers/apps/gui/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SG:/italian_checkers -BG:/italian_checkers/build_clean --check-stamp-file G:/italian_checkers/build_clean/apps/gui/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\CMake\share\cmake-4.3\Modules\CMakeFindDependencyMacro.cmake;C:\Program Files\CMake\share\cmake-4.3\Modules\CheckCXXSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-4.3\Modules\CheckIncludeFileCXX.cmake;C:\Program Files\CMake\share\cmake-4.3\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-4.3\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-4.3\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-4.3\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-4.3\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-4.3\Modules\Internal\CheckSourceCompiles.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\glad\gladConfig.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\glad\gladConfigVersion.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\glad\gladTargets-debug.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\glad\gladTargets-release.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\glad\gladTargets.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\glfw3\glfw3Config.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\glfw3\glfw3ConfigVersion.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\glfw3\glfw3Targets-debug.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\glfw3\glfw3Targets-release.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\glfw3\glfw3Targets.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\glm\glmConfig-debug.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\glm\glmConfig-release.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\glm\glmConfig.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\glm\glmConfigVersion.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\imgui\imgui-config.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\imgui\imgui-targets-debug.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\imgui\imgui-targets-release.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\imgui\imgui-targets.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">G:\italian_checkers\build_clean\apps\gui\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule G:/italian_checkers/apps/gui/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SG:/italian_checkers -BG:/italian_checkers/build_clean --check-stamp-file G:/italian_checkers/build_clean/apps/gui/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files\CMake\share\cmake-4.3\Modules\CMakeFindDependencyMacro.cmake;C:\Program Files\CMake\share\cmake-4.3\Modules\CheckCXXSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-4.3\Modules\CheckIncludeFileCXX.cmake;C:\Program Files\CMake\share\cmake-4.3\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-4.3\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-4.3\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-4.3\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-4.3\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-4.3\Modules\Internal\CheckSourceCompiles.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\glad\gladConfig.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\glad\gladConfigVersion.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\glad\gladTargets-debug.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\glad\gladTargets-release.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\glad\gladTargets.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\glfw3\glfw3Config.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\glfw3\glfw3ConfigVersion.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\glfw3\glfw3Targets-debug.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\glfw3\glfw3Targets-release.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\glfw3\glfw3Targets.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\glm\glmConfig-debug.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\glm\glmConfig-release.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\glm\glmConfig.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\glm\glmConfigVersion.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\imgui\imgui-config.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\imgui\imgui-targets-debug.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\imgui\imgui-targets-release.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\imgui\imgui-targets.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">G:\italian_checkers\build_clean\apps\gui\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule G:/italian_checkers/apps/gui/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SG:/italian_checkers -BG:/italian_checkers/build_clean --check-stamp-file G:/italian_checkers/build_clean/apps/gui/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files\CMake\share\cmake-4.3\Modules\CMakeFindDependencyMacro.cmake;C:\Program Files\CMake\share\cmake-4.3\Modules\CheckCXXSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-4.3\Modules\CheckIncludeFileCXX.cmake;C:\Program Files\CMake\share\cmake-4.3\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-4.3\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-4.3\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-4.3\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-4.3\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-4.3\Modules\Internal\CheckSourceCompiles.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\glad\gladConfig.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\glad\gladConfigVersion.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\glad\gladTargets-debug.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\glad\gladTargets-release.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\glad\gladTargets.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\glfw3\glfw3Config.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\glfw3\glfw3ConfigVersion.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\glfw3\glfw3Targets-debug.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\glfw3\glfw3Targets-release.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\glfw3\glfw3Targets.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\glm\glmConfig-debug.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\glm\glmConfig-release.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\glm\glmConfig.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\glm\glmConfigVersion.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\imgui\imgui-config.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\imgui\imgui-targets-debug.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\imgui\imgui-targets-release.cmake;G:\italian_checkers\build_clean\vcpkg_installed\x64-windows\share\imgui\imgui-targets.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">G:\italian_checkers\build_clean\apps\gui\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="G:\italian_checkers\apps\gui\main.cpp" />
+    <ClCompile Include="G:\italian_checkers\apps\gui\app.cpp" />
+    <ClCompile Include="G:\italian_checkers\apps\gui\platform\window.cpp" />
+    <ClCompile Include="G:\italian_checkers\apps\gui\input\keyboard.cpp" />
+    <ClCompile Include="G:\italian_checkers\apps\gui\renderer\board_renderer.cpp" />
+    <ClInclude Include="G:\italian_checkers\apps\gui\renderer\camera.h" />
+    <ClCompile Include="G:\italian_checkers\apps\gui\renderer\piece_renderer.cpp" />
+    <ClInclude Include="G:\italian_checkers\apps\gui\renderer\piece_renderer.h" />
+    <ClCompile Include="G:\italian_checkers\apps\gui\renderer\shader.cpp" />
+    <ClInclude Include="G:\italian_checkers\apps\gui\renderer\shader.h" />
+    <ClCompile Include="G:\italian_checkers\apps\gui\ui\ui.cpp" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="G:\italian_checkers\build_clean\ZERO_CHECK.vcxproj">
+      <Project>{AB54B9DD-69C7-385C-ADF7-43F87CE875ED}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="G:\italian_checkers\build_clean\core\dama_engine.vcxproj">
+      <Project>{CC896966-0D75-337E-A1C1-3E7E19278E1A}</Project>
+      <Name>dama_engine</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

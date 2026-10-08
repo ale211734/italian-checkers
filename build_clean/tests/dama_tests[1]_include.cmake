@@ -1,0 +1,5 @@
+if(EXISTS "G:/italian_checkers/build_clean/tests/dama_tests[1]_tests.cmake")
+  include("G:/italian_checkers/build_clean/tests/dama_tests[1]_tests.cmake")
+else()
+  add_test(dama_tests_NOT_BUILT dama_tests_NOT_BUILT)
+endif()

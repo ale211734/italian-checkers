@@ -1,0 +1,9 @@
+# CMake generation dependency list for this directory.
+C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeFindDependencyMacro.cmake
+C:/Program Files/CMake/share/cmake-4.3/Modules/GoogleTest.cmake
+G:/italian_checkers/build_clean/vcpkg_installed/x64-windows/share/gtest/GTestConfig.cmake
+G:/italian_checkers/build_clean/vcpkg_installed/x64-windows/share/gtest/GTestConfigVersion.cmake
+G:/italian_checkers/build_clean/vcpkg_installed/x64-windows/share/gtest/GTestTargets-debug.cmake
+G:/italian_checkers/build_clean/vcpkg_installed/x64-windows/share/gtest/GTestTargets-release.cmake
+G:/italian_checkers/build_clean/vcpkg_installed/x64-windows/share/gtest/GTestTargets.cmake
+G:/italian_checkers/tests/CMakeLists.txt

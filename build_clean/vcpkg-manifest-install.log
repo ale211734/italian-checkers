@@ -1,0 +1,54 @@
+Rilevamento dell'hash del compilatore per la tripletta x64-windows...
+Compilatore trovato: C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe
+I pacchetti seguenti sono gi├á installati:
+  * egl-registry:x64-windows@2025-05-27
+    glad[core,loader]:x64-windows@0.1.36
+    glfw3:x64-windows@3.5.1
+    glm:x64-windows@1.0.3
+    gtest:x64-windows@1.18.0
+    imgui[core,opengl3-binding,glfw-binding]:x64-windows@1.92.9
+  * opengl-registry:x64-windows@2026-08-03
+  * vcpkg-cmake:x64-windows@2025-08-07
+  * vcpkg-cmake-config:x64-windows@2026-07-21
+glad fornisce destinazioni CMake:
+
+  # generato in modo euristico e potrebbe non essere corretto
+  find_package(glad CONFIG REQUIRED)
+  target_link_libraries(main PRIVATE glad::glad)
+
+glfw3 fornisce destinazioni CMake:
+
+  # generato in modo euristico e potrebbe non essere corretto
+  find_package(glfw3 CONFIG REQUIRED)
+  target_link_libraries(main PRIVATE glfw)
+
+glfw3 fornisce moduli pkg-config:
+
+  # A multi-platform library for OpenGL, window and input
+  glfw3
+
+The package glm provides CMake targets:
+
+    find_package(glm CONFIG REQUIRED)
+    target_link_libraries(main PRIVATE glm::glm)
+
+    # Or use the header-only version
+    find_package(glm CONFIG REQUIRED)
+    target_link_libraries(main PRIVATE glm::glm-header-only)
+
+The package gtest is compatible with built-in CMake targets:
+
+    enable_testing()
+    
+    find_package(GTest CONFIG REQUIRED)
+    target_link_libraries(main PRIVATE GTest::gtest GTest::gtest_main GTest::gmock GTest::gmock_main)
+    
+    add_test(AllTestsInMain main)
+
+imgui fornisce destinazioni CMake:
+
+  # generato in modo euristico e potrebbe non essere corretto
+  find_package(imgui CONFIG REQUIRED)
+  target_link_libraries(main PRIVATE imgui::imgui)
+
+Tutte le installazioni richieste sono state completate in: 216 us

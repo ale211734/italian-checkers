@@ -1,0 +1,10 @@
+{
+	"InstallScripts" : 
+	[
+		"G:/italian_checkers/build_clean/cmake_install.cmake",
+		"G:/italian_checkers/build_clean/core/cmake_install.cmake",
+		"G:/italian_checkers/build_clean/apps/gui/cmake_install.cmake",
+		"G:/italian_checkers/build_clean/tests/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

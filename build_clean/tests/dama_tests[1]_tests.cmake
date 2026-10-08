@@ -1,0 +1,7 @@
+add_test([=[InitialPosition.twelve_pieces_each]=]  G:/italian_checkers/build_clean/tests/Debug/dama_tests.exe [==[--gtest_filter=InitialPosition.twelve_pieces_each]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[InitialPosition.twelve_pieces_each]=]  PROPERTIES DEF_SOURCE_LINE [==[G:\italian_checkers\tests\test.cpp:7]==] WORKING_DIRECTORY G:/italian_checkers/build_clean/tests SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+add_test([=[Moves.corner_piece_has_one_move]=]  G:/italian_checkers/build_clean/tests/Debug/dama_tests.exe [==[--gtest_filter=Moves.corner_piece_has_one_move]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[Moves.corner_piece_has_one_move]=]  PROPERTIES DEF_SOURCE_LINE [==[G:\italian_checkers\tests\test.cpp:19]==] WORKING_DIRECTORY G:/italian_checkers/build_clean/tests SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+add_test([=[Moves.all_legal_moves_nonempty]=]  G:/italian_checkers/build_clean/tests/Debug/dama_tests.exe [==[--gtest_filter=Moves.all_legal_moves_nonempty]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[Moves.all_legal_moves_nonempty]=]  PROPERTIES DEF_SOURCE_LINE [==[G:\italian_checkers\tests\test.cpp:24]==] WORKING_DIRECTORY G:/italian_checkers/build_clean/tests SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+set(  dama_tests_TESTS InitialPosition.twelve_pieces_each Moves.corner_piece_has_one_move Moves.all_legal_moves_nonempty)

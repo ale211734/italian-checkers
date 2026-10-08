@@ -1,0 +1,9 @@
+G:/italian_checkers/build_clean/CMakeFiles/RUN_TESTS.dir
+G:/italian_checkers/build_clean/CMakeFiles/ALL_BUILD.dir
+G:/italian_checkers/build_clean/CMakeFiles/ZERO_CHECK.dir
+G:/italian_checkers/build_clean/core/CMakeFiles/dama_engine.dir
+G:/italian_checkers/build_clean/core/CMakeFiles/RUN_TESTS.dir
+G:/italian_checkers/build_clean/apps/gui/CMakeFiles/dama_gui.dir
+G:/italian_checkers/build_clean/apps/gui/CMakeFiles/RUN_TESTS.dir
+G:/italian_checkers/build_clean/tests/CMakeFiles/dama_tests.dir
+G:/italian_checkers/build_clean/tests/CMakeFiles/RUN_TESTS.dir

@@ -1,0 +1,8 @@
+G:\italian_checkers\apps\gui\main.cpp;G:\italian_checkers\build_clean\apps\gui\dama_gui.dir\Release\main.obj
+G:\italian_checkers\apps\gui\app.cpp;G:\italian_checkers\build_clean\apps\gui\dama_gui.dir\Release\app.obj
+G:\italian_checkers\apps\gui\platform\window.cpp;G:\italian_checkers\build_clean\apps\gui\dama_gui.dir\Release\window.obj
+G:\italian_checkers\apps\gui\input\keyboard.cpp;G:\italian_checkers\build_clean\apps\gui\dama_gui.dir\Release\keyboard.obj
+G:\italian_checkers\apps\gui\renderer\board_renderer.cpp;G:\italian_checkers\build_clean\apps\gui\dama_gui.dir\Release\board_renderer.obj
+G:\italian_checkers\apps\gui\renderer\piece_renderer.cpp;G:\italian_checkers\build_clean\apps\gui\dama_gui.dir\Release\piece_renderer.obj
+G:\italian_checkers\apps\gui\renderer\shader.cpp;G:\italian_checkers\build_clean\apps\gui\dama_gui.dir\Release\shader.obj
+G:\italian_checkers\apps\gui\ui\ui.cpp;G:\italian_checkers\build_clean\apps\gui\dama_gui.dir\Release\ui.obj

@@ -8,15 +8,21 @@ find_package(glm CONFIG REQUIRED)
 add_executable(dama_gui
   main.cpp
   app.cpp
+  app.h
   platform/window.cpp
+  platform/window.h
+  platform/glfw_context.h
   input/keyboard.cpp
+  input/keyboard.h
   renderer/board_renderer.cpp
+  renderer/board_renderer.h
   renderer/camera.h
   renderer/piece_renderer.cpp
   renderer/piece_renderer.h
   renderer/shader.cpp
   renderer/shader.h
   ui/ui.cpp
+  ui/ui.h
 )
 
 target_include_directories(dama_gui PRIVATE 

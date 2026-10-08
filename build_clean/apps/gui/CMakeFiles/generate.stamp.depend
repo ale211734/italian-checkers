@@ -1,0 +1,29 @@
+# CMake generation dependency list for this directory.
+C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeFindDependencyMacro.cmake
+C:/Program Files/CMake/share/cmake-4.3/Modules/CheckCXXSourceCompiles.cmake
+C:/Program Files/CMake/share/cmake-4.3/Modules/CheckIncludeFileCXX.cmake
+C:/Program Files/CMake/share/cmake-4.3/Modules/CheckLibraryExists.cmake
+C:/Program Files/CMake/share/cmake-4.3/Modules/FindOpenGL.cmake
+C:/Program Files/CMake/share/cmake-4.3/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files/CMake/share/cmake-4.3/Modules/FindPackageMessage.cmake
+C:/Program Files/CMake/share/cmake-4.3/Modules/FindThreads.cmake
+C:/Program Files/CMake/share/cmake-4.3/Modules/Internal/CheckSourceCompiles.cmake
+G:/italian_checkers/apps/gui/CMakeLists.txt
+G:/italian_checkers/build_clean/vcpkg_installed/x64-windows/share/glad/gladConfig.cmake
+G:/italian_checkers/build_clean/vcpkg_installed/x64-windows/share/glad/gladConfigVersion.cmake
+G:/italian_checkers/build_clean/vcpkg_installed/x64-windows/share/glad/gladTargets-debug.cmake
+G:/italian_checkers/build_clean/vcpkg_installed/x64-windows/share/glad/gladTargets-release.cmake
+G:/italian_checkers/build_clean/vcpkg_installed/x64-windows/share/glad/gladTargets.cmake
+G:/italian_checkers/build_clean/vcpkg_installed/x64-windows/share/glfw3/glfw3Config.cmake
+G:/italian_checkers/build_clean/vcpkg_installed/x64-windows/share/glfw3/glfw3ConfigVersion.cmake
+G:/italian_checkers/build_clean/vcpkg_installed/x64-windows/share/glfw3/glfw3Targets-debug.cmake
+G:/italian_checkers/build_clean/vcpkg_installed/x64-windows/share/glfw3/glfw3Targets-release.cmake
+G:/italian_checkers/build_clean/vcpkg_installed/x64-windows/share/glfw3/glfw3Targets.cmake
+G:/italian_checkers/build_clean/vcpkg_installed/x64-windows/share/glm/glmConfig-debug.cmake
+G:/italian_checkers/build_clean/vcpkg_installed/x64-windows/share/glm/glmConfig-release.cmake
+G:/italian_checkers/build_clean/vcpkg_installed/x64-windows/share/glm/glmConfig.cmake
+G:/italian_checkers/build_clean/vcpkg_installed/x64-windows/share/glm/glmConfigVersion.cmake
+G:/italian_checkers/build_clean/vcpkg_installed/x64-windows/share/imgui/imgui-config.cmake
+G:/italian_checkers/build_clean/vcpkg_installed/x64-windows/share/imgui/imgui-targets-debug.cmake
+G:/italian_checkers/build_clean/vcpkg_installed/x64-windows/share/imgui/imgui-targets-release.cmake
+G:/italian_checkers/build_clean/vcpkg_installed/x64-windows/share/imgui/imgui-targets.cmake

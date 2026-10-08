@@ -1,0 +1,33 @@
+{
+  "tests": 3,
+  "name": "AllTests",
+  "testsuites": [
+    {
+      "name": "InitialPosition",
+      "tests": 1,
+      "testsuite": [
+        {
+          "name": "twelve_pieces_each",
+          "file": "G:\\italian_checkers\\tests\\test.cpp",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "name": "Moves",
+      "tests": 2,
+      "testsuite": [
+        {
+          "name": "corner_piece_has_one_move",
+          "file": "G:\\italian_checkers\\tests\\test.cpp",
+          "line": 19
+        },
+        {
+          "name": "all_legal_moves_nonempty",
+          "file": "G:\\italian_checkers\\tests\\test.cpp",
+          "line": 24
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+^G:\ITALIAN_CHECKERS\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SG:/italian_checkers -BG:/italian_checkers/build_clean --check-stamp-file G:/italian_checkers/build_clean/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
