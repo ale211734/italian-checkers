@@ -105,7 +105,7 @@ namespace {
     {
         Pos p = m.path.back();
         auto positions = getNeighbourAll(p, s); // da distinguere per pedina e dama
-        visited.insert(p);
+        //visited.insert(p);
         auto piece = s.getPiece(p);
         int newCapture = 0;
         for (auto pos: positions)
@@ -123,8 +123,10 @@ namespace {
                 if (is_opposite(piece, nextPiece) && is_empty(jumpPiece))
                 {
                     if (!is_king(piece) && is_king(nextPiece)) continue;
-                    if ((visited.find(jumpPos) == visited.end()) || (jumpPos == m.path.front()))
+                    //if ((visited.find(jumpPos) == visited.end()))
+                    if ((visited.find(pos.value()) == visited.end()))
                     {
+                        visited.insert(pos.value());
                         m.path.push_back(jumpPos);
                         m.captured.push_back(pos.value());
                         movePiece(s, p, jumpPos);
@@ -156,7 +158,7 @@ namespace {
                  
         }
         // no new capture movements
-        if (newCapture == 0)
+        if ((newCapture == 0) && (m.path.size()>1))
         {
             // finiti i capture
             moves.push_back(m);

@@ -220,8 +220,9 @@ TEST(MandatoryCapture, findCapture_king_multicapture_loop) {
     s.setPiece(Pos(3, 3), dama::Piece::WhiteKing);
     s.setPiece(Pos(3, 5), dama::Piece::WhiteKing);
     s.setPiece(Pos(5, 5), dama::Piece::WhiteKing);
+    s.setPiece(Pos(5, 3), dama::Piece::WhiteKing);
 
-    Move m1({ Pos(4, 2),Pos(2, 4), Pos(4,6), Pos(6,4) }, { Pos(3,3),Pos(3,5),Pos(5,5) }, false);
+    Move m1({ Pos(4, 2),Pos(2, 4), Pos(4,6), Pos(6,4), Pos(4, 2) }, { Pos(3,3),Pos(3,5),Pos(5,5),Pos(5,3) }, false);
 
 
     std::vector<Move> match = { m1 };
@@ -241,4 +242,32 @@ TEST(MandatoryCapture, findCapture_king_multicapture_loop) {
 
     EXPECT_EQ(result.size(), match.size());
 
+}
+
+
+TEST(MandatoryCapture, findCapture_no_capture1) {
+    GameState s;
+
+    s.setPiece(Pos(4, 2), dama::Piece::BlackKing);
+
+    Move m;
+    m.path.push_back(Pos(4, 2));
+    std::set<Pos> visited;
+    std::vector<Move> result;
+    findCapture(s, visited, m, result);
+    EXPECT_EQ(result.size(), 0);
+}
+
+TEST(MandatoryCapture, findCapture_no_capture2) {
+    GameState s;
+
+    s.setPiece(Pos(4, 2), dama::Piece::BlackKing);
+    s.setPiece(Pos(5, 3), dama::Piece::BlackKing);
+
+    Move m;
+    m.path.push_back(Pos(4, 2));
+    std::set<Pos> visited;
+    std::vector<Move> result;
+    findCapture(s, visited, m, result);
+    EXPECT_EQ(result.size(), 0);
 }
