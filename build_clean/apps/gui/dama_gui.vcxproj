@@ -427,15 +427,21 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   <ItemGroup>
     <ClCompile Include="G:\italian_checkers\apps\gui\main.cpp" />
     <ClCompile Include="G:\italian_checkers\apps\gui\app.cpp" />
+    <ClInclude Include="G:\italian_checkers\apps\gui\app.h" />
     <ClCompile Include="G:\italian_checkers\apps\gui\platform\window.cpp" />
+    <ClInclude Include="G:\italian_checkers\apps\gui\platform\window.h" />
+    <ClInclude Include="G:\italian_checkers\apps\gui\platform\glfw_context.h" />
     <ClCompile Include="G:\italian_checkers\apps\gui\input\keyboard.cpp" />
+    <ClInclude Include="G:\italian_checkers\apps\gui\input\keyboard.h" />
     <ClCompile Include="G:\italian_checkers\apps\gui\renderer\board_renderer.cpp" />
+    <ClInclude Include="G:\italian_checkers\apps\gui\renderer\board_renderer.h" />
     <ClInclude Include="G:\italian_checkers\apps\gui\renderer\camera.h" />
     <ClCompile Include="G:\italian_checkers\apps\gui\renderer\piece_renderer.cpp" />
     <ClInclude Include="G:\italian_checkers\apps\gui\renderer\piece_renderer.h" />
     <ClCompile Include="G:\italian_checkers\apps\gui\renderer\shader.cpp" />
     <ClInclude Include="G:\italian_checkers\apps\gui\renderer\shader.h" />
     <ClCompile Include="G:\italian_checkers\apps\gui\ui\ui.cpp" />
+    <ClInclude Include="G:\italian_checkers\apps\gui\ui\ui.h" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

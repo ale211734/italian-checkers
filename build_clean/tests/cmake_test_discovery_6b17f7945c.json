@@ -1,31 +1,99 @@
 {
-  "tests": 3,
+  "tests": 13,
   "name": "AllTests",
   "testsuites": [
     {
       "name": "InitialPosition",
-      "tests": 1,
+      "tests": 3,
       "testsuite": [
         {
           "name": "twelve_pieces_each",
           "file": "G:\\italian_checkers\\tests\\test.cpp",
+          "line": 6
+        },
+        {
+          "name": "black",
+          "file": "G:\\italian_checkers\\tests\\test.cpp",
+          "line": 20
+        },
+        {
+          "name": "white",
+          "file": "G:\\italian_checkers\\tests\\test.cpp",
+          "line": 35
+        }
+      ]
+    },
+    {
+      "name": "SetAndGet",
+      "tests": 2,
+      "testsuite": [
+        {
+          "name": "set",
+          "file": "G:\\italian_checkers\\tests\\test.cpp",
+          "line": 50
+        },
+        {
+          "name": "get",
+          "file": "G:\\italian_checkers\\tests\\test.cpp",
+          "line": 58
+        }
+      ]
+    },
+    {
+      "name": "PosTest",
+      "tests": 1,
+      "testsuite": [
+        {
+          "name": "operators",
+          "file": "G:\\italian_checkers\\tests\\test_engine.cpp",
           "line": 7
         }
       ]
     },
     {
-      "name": "Moves",
+      "name": "BoardTest",
+      "tests": 5,
+      "testsuite": [
+        {
+          "name": "isPosInside",
+          "file": "G:\\italian_checkers\\tests\\test_engine.cpp",
+          "line": 16
+        },
+        {
+          "name": "getNeighbour",
+          "file": "G:\\italian_checkers\\tests\\test_engine.cpp",
+          "line": 23
+        },
+        {
+          "name": "getNeighbourAll_black",
+          "file": "G:\\italian_checkers\\tests\\test_engine.cpp",
+          "line": 44
+        },
+        {
+          "name": "getNeighbourAll_white",
+          "file": "G:\\italian_checkers\\tests\\test_engine.cpp",
+          "line": 96
+        },
+        {
+          "name": "getNeighbourAll_king",
+          "file": "G:\\italian_checkers\\tests\\test_engine.cpp",
+          "line": 148
+        }
+      ]
+    },
+    {
+      "name": "MandatoryCapture",
       "tests": 2,
       "testsuite": [
         {
-          "name": "corner_piece_has_one_move",
-          "file": "G:\\italian_checkers\\tests\\test.cpp",
-          "line": 19
+          "name": "findCapture_simple_black",
+          "file": "G:\\italian_checkers\\tests\\legal_move.cpp",
+          "line": 7
         },
         {
-          "name": "all_legal_moves_nonempty",
-          "file": "G:\\italian_checkers\\tests\\test.cpp",
-          "line": 24
+          "name": "findCapture_black_simple_branch",
+          "file": "G:\\italian_checkers\\tests\\legal_move.cpp",
+          "line": 30
         }
       ]
     }

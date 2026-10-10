@@ -4,6 +4,12 @@
     <ClCompile Include="G:\italian_checkers\tests\test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="G:\italian_checkers\tests\test_engine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="G:\italian_checkers\tests\legal_move.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="G:\italian_checkers\tests\CMakeLists.txt" />

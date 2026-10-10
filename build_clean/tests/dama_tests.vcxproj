@@ -462,6 +462,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="G:\italian_checkers\tests\test.cpp" />
+    <ClCompile Include="G:\italian_checkers\tests\test_engine.cpp" />
+    <ClCompile Include="G:\italian_checkers\tests\legal_move.cpp" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -306,6 +306,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="G:\italian_checkers\core\engine.cpp" />
+    <ClInclude Include="G:\italian_checkers\core\engine.h" />
+    <ClCompile Include="G:\italian_checkers\core\game_state.cpp" />
+    <ClInclude Include="G:\italian_checkers\core\game_state.h" />
+    <ClInclude Include="G:\italian_checkers\core\types.h" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
