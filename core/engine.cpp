@@ -135,15 +135,8 @@ namespace {
                         newCapture++;
                     }
                 }
-                else 
-                {
-                    // finiti i capture
-                    moves.push_back(m);
-                    if (canPromote(m.path.front(), m.path.back(), s))
-                    {
-                        m.promote = true;
-                    }
-                }
+                else continue;
+
                 // backpropagation step
                 if (m.path.back() == jumpPos)
                 {
@@ -152,8 +145,6 @@ namespace {
                     s.setPiece(p, dama::Piece::None);
                     if (stateChange) movePiece(s, jumpPos, p);
                 }
-                    
-                
             }
                  
         }
