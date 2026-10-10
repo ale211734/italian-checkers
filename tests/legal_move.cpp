@@ -16,7 +16,7 @@ TEST(MandatoryCapture, findCapture_simple_black) {
     std::vector<Move> moves;
     std::set<Pos> visited;
     m.path.push_back(Pos(2, 2));
-    findCapture(Pos(2, 2), s, visited, m, moves);
+    findCapture(s, visited, m, moves);
 
     EXPECT_EQ(moves.size(), 1);
 
@@ -26,7 +26,7 @@ TEST(MandatoryCapture, findCapture_simple_black) {
     EXPECT_TRUE(mr.path.back() == Pos(4, 4));
 
 }
-#if 0
+
 TEST(MandatoryCapture, findCapture_black_simple_branch) {
 
 
@@ -57,7 +57,7 @@ TEST(MandatoryCapture, findCapture_black_simple_branch) {
     std::set<Pos> visited;
    
     // bisognerebbe rendere unici i risultati cosi non va bene
-    findCapture(Pos(2, 2), s, visited, m, result);
+    findCapture(s, visited, m, result);
 
     for (auto r : result)
     {
@@ -68,7 +68,7 @@ TEST(MandatoryCapture, findCapture_black_simple_branch) {
 
 }
 
-
+#if 0
 TEST(MandatoryCapture, findCapture_king_branch) {
 
 

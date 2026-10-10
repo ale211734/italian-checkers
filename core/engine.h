@@ -41,7 +41,7 @@ namespace dama {
 
 
 
-    void findCapture(Pos p, GameState& s, std::set<Pos>& visited, Move& m, std::vector<Move>& moves);
+    void findCapture(GameState& s, std::set<Pos>& visited, Move& m, std::vector<Move>& moves);
 
     std::vector<Move> legalMove(const GameState& s);
 

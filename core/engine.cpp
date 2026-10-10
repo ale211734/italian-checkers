@@ -101,8 +101,9 @@ namespace {
     }
 
 
-    void findCapture(Pos p, GameState& s, std::set<Pos> & visited, Move & m, std::vector<Move> & moves)
+    void findCapture(GameState& s, std::set<Pos> & visited, Move & m, std::vector<Move> & moves)
     {
+        Pos p = m.path.back();
         auto positions = getNeighbourAll(p, s); // da distinguere per pedina e dama
         visited.insert(p);
         auto piece = s.getPiece(p);
@@ -127,7 +128,7 @@ namespace {
                         m.path.push_back(jumpPos);
                         m.captured.push_back(pos.value());
                         movePiece(s, p, jumpPos);
-                        findCapture(jumpPos, s, visited, m, moves);
+                        findCapture(s, visited, m, moves);
                         stateChange = true;
                         newCapture++;
                     }
@@ -181,7 +182,7 @@ namespace {
                     m.path.push_back(Pos(r, c));
                     std::vector<Move> moves;
                     std::set<Pos> visited;
-                    findCapture(Pos(r,c), scopy, visited, m, moves);
+                    findCapture(scopy, visited, m, moves);
 
                     if (!moves.empty()) // there are some captures
                     {
