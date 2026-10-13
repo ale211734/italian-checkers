@@ -176,7 +176,7 @@ namespace {
                     std::vector<Move> moves;
                     std::set<Pos> visited;
                     findCapture(scopy, visited, m, moves);
-
+                    
                     if (!moves.empty()) // there are some captures
                     {
                         Move m;
