@@ -26,8 +26,16 @@ namespace {
         return false;
     }
 
-
     }  // namespace
+
+    int Move::score() const
+    {
+        int scorepoint = 0;
+        // numero pezzi prioritario
+        scorepoint += 1000 * (numberKingCaptured + numberNoKingCaptured);
+        scorepoint += ((pieceStart == Piece::BlackKing) || (pieceStart == Piece::WhiteKing) ? 1 : 0) * 100;
+        return scorepoint;
+    }
 
     GameState initial_position() {
         GameState p;
@@ -70,7 +78,7 @@ namespace {
         const auto& piece = g.getPiece(p);
         const std::vector<Pos>* selectedPos = nullptr;
 
-        // 1. Controlla PRIMA se è un re
+        // 1. Controlla PRIMA se ï¿½ un re
         if (is_king(piece)) {
             selectedPos = &posKing;
         }
@@ -81,7 +89,7 @@ namespace {
             selectedPos = &posBlack;
         }
 
-        // Se la casella è vuota o il pezzo non è valido, ritorna vuoto
+        // Se la casella ï¿½ vuota o il pezzo non ï¿½ valido, ritorna vuoto
         if (!selectedPos) {
             return neighbours;
         }
@@ -100,7 +108,7 @@ namespace {
         s.setPiece(source, Piece::None);
     }
 
-
+    // find all capture
     void findCapture(GameState& s, std::set<Pos> & visited, Move & m, std::vector<Move> & moves)
     {
         Pos p = m.path.back();
@@ -108,7 +116,7 @@ namespace {
         //visited.insert(p);
         auto piece = s.getPiece(p);
         int newCapture = 0;
-        for (auto pos: positions)
+        for (const auto& pos: positions)
         {
             Pos offset(0,0);
             if (pos.has_value())
@@ -129,6 +137,16 @@ namespace {
                         visited.insert(pos.value());
                         m.path.push_back(jumpPos);
                         m.captured.push_back(pos.value());
+
+                        // 
+                        m.pieceStart = s.getPiece(m.path.front());
+                        if ((s.getPiece(pos.value()) == dama::Piece::BlackKing) ||
+                            (s.getPiece(pos.value()) == dama::Piece::WhiteKing))
+                        {
+                            m.numberKingCaptured++;
+                        }
+                        else m.numberNoKingCaptured++;
+                        
                         movePiece(s, p, jumpPos);
                         findCapture(s, visited, m, moves);
                         stateChange = true;
@@ -160,8 +178,21 @@ namespace {
         }
     }
 
+
+  
+
+    // order capture with checkers rules
+    void orderMoves(std::vector<Move>& moves)
+    {
+        auto sortMove = [](const Move& s1, const Move& s2)
+        {
+            
+        };
+    }
+
     std::vector<Move> legalMove(const GameState& s)
     {
+        std::vector<Move> mtotalMoves;
         GameState scopy = s;
         std::vector<Move> result;
         for (int r = 0; r < kBoardSize; r++)
@@ -179,8 +210,12 @@ namespace {
                     
                     if (!moves.empty()) // there are some captures
                     {
-                        Move m;
+                        mtotalMoves.insert(mtotalMoves.end(), moves.begin(), moves.end());
                         //m.captured = true;
+                    }
+                    else
+                    {
+                        auto positions = getNeighbourAll(Pos(r, c), s); // da distinguere per pedina e dama
                     }
                 }
                 
@@ -189,7 +224,7 @@ namespace {
                 }
             }
         }
-        return std::vector<Move>();
+        return mtotalMoves;
     }
 
 }  // namespace dama

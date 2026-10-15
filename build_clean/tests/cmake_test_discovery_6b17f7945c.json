@@ -1,5 +1,5 @@
 {
-  "tests": 13,
+  "tests": 20,
   "name": "AllTests",
   "testsuites": [
     {
@@ -83,17 +83,52 @@
     },
     {
       "name": "MandatoryCapture",
-      "tests": 2,
+      "tests": 9,
       "testsuite": [
         {
           "name": "findCapture_simple_black",
           "file": "G:\\italian_checkers\\tests\\legal_move.cpp",
-          "line": 7
+          "line": 14
         },
         {
           "name": "findCapture_black_simple_branch",
           "file": "G:\\italian_checkers\\tests\\legal_move.cpp",
-          "line": 30
+          "line": 37
+        },
+        {
+          "name": "findCapture_king_branch",
+          "file": "G:\\italian_checkers\\tests\\legal_move.cpp",
+          "line": 70
+        },
+        {
+          "name": "findCapture_king_multicapture",
+          "file": "G:\\italian_checkers\\tests\\legal_move.cpp",
+          "line": 107
+        },
+        {
+          "name": "findCapture_king_multicapture_multibranch",
+          "file": "G:\\italian_checkers\\tests\\legal_move.cpp",
+          "line": 140
+        },
+        {
+          "name": "findCapture_king_multicapture_loop",
+          "file": "G:\\italian_checkers\\tests\\legal_move.cpp",
+          "line": 176
+        },
+        {
+          "name": "findCapture_no_capture1",
+          "file": "G:\\italian_checkers\\tests\\legal_move.cpp",
+          "line": 210
+        },
+        {
+          "name": "findCapture_no_capture2",
+          "file": "G:\\italian_checkers\\tests\\legal_move.cpp",
+          "line": 223
+        },
+        {
+          "name": "findcapture_check_score",
+          "file": "G:\\italian_checkers\\tests\\legal_move.cpp",
+          "line": 237
         }
       ]
     }

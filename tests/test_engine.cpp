@@ -199,3 +199,5 @@ TEST(BoardTest, getNeighbourAll_king) {
 
     }
 }
+
+

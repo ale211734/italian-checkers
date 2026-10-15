@@ -10,17 +10,31 @@ namespace dama {
 
     class Move {
     public:
-        Move() = default;
+        Move() : pieceStart(Piece::None), numberKingCaptured(0), numberNoKingCaptured(0), promote(false) {}
         Move(std::vector<Pos> path, std::vector<Pos> captured = {}, bool promote = false)
-            : path(std::move(path)), captured(std::move(captured)), promote(promote) {}
+            : path(std::move(path)), captured(std::move(captured)), promote(promote), 
+              pieceStart(Piece::None), numberKingCaptured(0), numberNoKingCaptured(0) {}
         std::vector<Pos> path;
         std::vector<Pos> captured;
-        bool isCaptured() { return !captured.empty(); }
-        bool isPromoted() { return promote; }
-        Pos from() { return path.front(); };
-        Pos to() { return path.back(); };
+        bool isCaptured() const { return !captured.empty(); }
+        bool isPromoted() const { return promote; }
+        Pos from() const { return path.front(); };
+        Pos to() const { return path.back(); };
 
-        // C++20: Genera automaticamente ==, !=, <, <=, >, >=
+        // score need to order the capture moves.
+        int score() const;
+        
+        Piece pieceStart;
+        int numberKingCaptured;
+        int numberNoKingCaptured;
+
+
+        // Custom equality: only path and captured matter for move identity
+        bool operator==(const Move& other) const {
+            return path == other.path && captured == other.captured;
+        }
+
+        // C++20: Genera automaticamente <, <=, >, >=
         auto operator<=>(const Move&) const = default;
 
         bool promote = false;
@@ -33,11 +47,12 @@ namespace dama {
         return std::nullopt;
     }
 
+    static GameState initial_position();
+    static std::string to_string(const GameState& p);
+    static void movePiece(GameState& s, Pos source, Pos dest);
+    static void orderMoves(std::vector<Move>& moves);
+    
     std::vector<std::optional<Pos>> getNeighbourAll(Pos p, const GameState& g);
-
-
-
-
 
 
 

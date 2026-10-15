@@ -4,6 +4,13 @@
 
 using namespace dama;
 
+static bool isValidateMove(const Move& move_to_check, const std::vector<Move>& moves_list) {
+    for (const auto& mr : moves_list) {
+        if (move_to_check == mr) return true;
+    }
+    return false;
+}
+
 TEST(MandatoryCapture, findCapture_simple_black) {
 
     // create a capture scenario
@@ -29,15 +36,6 @@ TEST(MandatoryCapture, findCapture_simple_black) {
 
 TEST(MandatoryCapture, findCapture_black_simple_branch) {
 
-
-    auto isValidateMove = [](const Move & m, std::vector<Move> & moves)->bool
-    {
-        for (auto mr : moves)
-        {
-            if (m == mr) return true;
-        }
-        return false;
-    };
     // create a capture scenario
     GameState s;
 
@@ -71,15 +69,6 @@ TEST(MandatoryCapture, findCapture_black_simple_branch) {
 
 TEST(MandatoryCapture, findCapture_king_branch) {
 
-
-    auto isValidateMove = [](const Move& m, std::vector<Move>& moves)->bool
-        {
-            for (auto mr : moves)
-            {
-                if (m == mr) return true;
-            }
-            return false;
-        };
     // create a capture scenario
     GameState s;
 
@@ -117,15 +106,6 @@ TEST(MandatoryCapture, findCapture_king_branch) {
 
 TEST(MandatoryCapture, findCapture_king_multicapture) {
 
-
-    auto isValidateMove = [](const Move& m, std::vector<Move>& moves)->bool
-        {
-            for (auto mr : moves)
-            {
-                if (m == mr) return true;
-            }
-            return false;
-        };
     // create a capture scenario
     GameState s;
 
@@ -159,15 +139,6 @@ TEST(MandatoryCapture, findCapture_king_multicapture) {
 
 TEST(MandatoryCapture, findCapture_king_multicapture_multibranch) {
 
-
-    auto isValidateMove = [](const Move& m, std::vector<Move>& moves)->bool
-        {
-            for (auto mr : moves)
-            {
-                if (m == mr) return true;
-            }
-            return false;
-        };
     // create a capture scenario
     GameState s;
 
@@ -204,15 +175,6 @@ TEST(MandatoryCapture, findCapture_king_multicapture_multibranch) {
 
 TEST(MandatoryCapture, findCapture_king_multicapture_loop) {
 
-
-    auto isValidateMove = [](const Move& m, std::vector<Move>& moves)->bool
-        {
-            for (auto mr : moves)
-            {
-                if (m == mr) return true;
-            }
-            return false;
-        };
     // create a capture scenario
     GameState s;
 
@@ -270,4 +232,27 @@ TEST(MandatoryCapture, findCapture_no_capture2) {
     std::vector<Move> result;
     findCapture(s, visited, m, result);
     EXPECT_EQ(result.size(), 0);
+}
+
+TEST(MandatoryCapture, findcapture_check_score) {
+
+    GameState s;
+
+    s.setPiece(Pos(4, 2), dama::Piece::BlackKing);
+    s.setPiece(Pos(3, 3), dama::Piece::WhiteKing);
+    s.setPiece(Pos(3, 5), dama::Piece::WhiteKing);
+    s.setPiece(Pos(5, 5), dama::Piece::White);
+    s.setPiece(Pos(5, 3), dama::Piece::WhiteKing);
+
+    Move m;
+    m.path.push_back(Pos(4, 2));
+    std::set<Pos> visited;
+    std::vector<Move> result;
+    findCapture(s, visited, m, result);
+
+    EXPECT_EQ(result.size(), 1);
+    auto m_res = result[0];
+
+    EXPECT_EQ(m_res.numberKingCaptured, 3);
+    EXPECT_EQ(m_res.numberNoKingCaptured, 1);
 }
