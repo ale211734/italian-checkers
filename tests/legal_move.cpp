@@ -1,6 +1,7 @@
 #include <gtest/gtest.h>
-#include "engine.h"
+#include "move_generator.h"
 #include <cstdint>
+
 
 using namespace dama;
 
@@ -255,4 +256,114 @@ TEST(MandatoryCapture, findcapture_check_score) {
 
     EXPECT_EQ(m_res.numberKingCaptured, 3);
     EXPECT_EQ(m_res.numberNoKingCaptured, 1);
+}
+
+
+TEST(MandatoryCapture, findcapture_check_score2) {
+    GameState s;
+    s.setPiece(Pos(4, 2), dama::Piece::BlackKing);
+    s.setPiece(Pos(3, 1), dama::Piece::WhiteKing);
+    s.setPiece(Pos(3, 3), dama::Piece::White);
+
+    Move m1({ Pos(4, 2),Pos(2, 0) }, { Pos(3,1) }, false);
+
+
+    std::vector<Move> match = { m1 };
+
+
+    Move m;
+    m.path.push_back(Pos(4, 2));
+    std::set<Pos> visited;
+    std::vector<Move> result;
+    findCapture(s, visited, m, result);
+
+
+    EXPECT_EQ(result.size(), 2);
+
+    EXPECT_EQ(result[0].numberKingCaptured, 1);
+    EXPECT_EQ(result[0].numberNoKingCaptured, 0);
+
+    EXPECT_EQ(result[1].numberKingCaptured, 0);
+    EXPECT_EQ(result[1].numberNoKingCaptured, 1);
+}
+
+
+TEST(MandatoryCapture, legal_move_take_max_number_piece) {
+    GameState s;
+    s.setPiece(Pos(4, 2), dama::Piece::BlackKing);
+    s.setPiece(Pos(3, 1), dama::Piece::WhiteKing);
+    s.setPiece(Pos(3, 3), dama::Piece::WhiteKing);
+    s.setPiece(Pos(3, 5), dama::Piece::WhiteKing);
+    s.setPiece(Pos(5, 5), dama::Piece::White);
+    s.setPiece(Pos(5, 3), dama::Piece::WhiteKing);
+
+    Move m1({ Pos(4, 2),Pos(2, 4), Pos(4,6), Pos(6,4), Pos(4, 2) }, { Pos(3,3),Pos(3,5),Pos(5,5),Pos(5,3) }, false);
+
+
+    std::vector<Move> match = { m1 };
+
+
+    Move m;
+    m.path.push_back(Pos(4, 2));
+    std::set<Pos> visited;
+    std::vector<Move> result;
+    findCapture(s, visited, m, result);
+    retrievePriorityCapture(result);
+
+    for (auto r : result)
+    {
+        EXPECT_TRUE(isValidateMove(r, match));
+    }
+}
+
+
+TEST(MandatoryCapture, legal_move_priority_king_over_piece) {
+    GameState s;
+    s.setPiece(Pos(4, 2), dama::Piece::BlackKing);
+    s.setPiece(Pos(3, 1), dama::Piece::WhiteKing);
+    s.setPiece(Pos(3, 3), dama::Piece::White);
+
+    Move m1({ Pos(4, 2),Pos(2, 0) }, { Pos(3,1) }, false);
+
+
+    std::vector<Move> match = { m1 };
+
+
+    Move m;
+    m.path.push_back(Pos(4, 2));
+    std::set<Pos> visited;
+    std::vector<Move> result;
+    findCapture(s, visited, m, result);
+    retrievePriorityCapture(result);
+
+    for (auto r : result)
+    {
+        EXPECT_TRUE(isValidateMove(r, match));
+    }
+}
+
+
+TEST(MandatoryCapture, legal_move_priority_king_over_piece2) {
+    GameState s;
+    s.setPiece(Pos(4, 2), dama::Piece::BlackKing);
+    s.setPiece(Pos(3, 1), dama::Piece::WhiteKing);
+    s.setPiece(Pos(3, 3), dama::Piece::White);
+
+    Move m1({ Pos(4, 2),Pos(2, 0) }, { Pos(3,1) }, false);
+
+
+    std::vector<Move> match = { m1 };
+
+
+    Move m;
+    m.path.push_back(Pos(4, 2));
+    std::set<Pos> visited;
+    std::vector<Move> result;
+    findCapture(s, visited, m, result);
+    retrievePriorityCapture(result);
+
+    for (auto r : result)
+    {
+        EXPECT_TRUE(isValidateMove(r, match));
+    }
 }

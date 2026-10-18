@@ -1,5 +1,5 @@
 {
-  "tests": 20,
+  "tests": 23,
   "name": "AllTests",
   "testsuites": [
     {
@@ -46,7 +46,7 @@
         {
           "name": "operators",
           "file": "G:\\italian_checkers\\tests\\test_engine.cpp",
-          "line": 7
+          "line": 8
         }
       ]
     },
@@ -57,78 +57,93 @@
         {
           "name": "isPosInside",
           "file": "G:\\italian_checkers\\tests\\test_engine.cpp",
-          "line": 16
+          "line": 17
         },
         {
           "name": "getNeighbour",
           "file": "G:\\italian_checkers\\tests\\test_engine.cpp",
-          "line": 23
+          "line": 24
         },
         {
           "name": "getNeighbourAll_black",
           "file": "G:\\italian_checkers\\tests\\test_engine.cpp",
-          "line": 44
+          "line": 45
         },
         {
           "name": "getNeighbourAll_white",
           "file": "G:\\italian_checkers\\tests\\test_engine.cpp",
-          "line": 96
+          "line": 97
         },
         {
           "name": "getNeighbourAll_king",
           "file": "G:\\italian_checkers\\tests\\test_engine.cpp",
-          "line": 148
+          "line": 149
         }
       ]
     },
     {
       "name": "MandatoryCapture",
-      "tests": 9,
+      "tests": 12,
       "testsuite": [
         {
           "name": "findCapture_simple_black",
           "file": "G:\\italian_checkers\\tests\\legal_move.cpp",
-          "line": 14
+          "line": 15
         },
         {
           "name": "findCapture_black_simple_branch",
           "file": "G:\\italian_checkers\\tests\\legal_move.cpp",
-          "line": 37
+          "line": 38
         },
         {
           "name": "findCapture_king_branch",
           "file": "G:\\italian_checkers\\tests\\legal_move.cpp",
-          "line": 70
+          "line": 71
         },
         {
           "name": "findCapture_king_multicapture",
           "file": "G:\\italian_checkers\\tests\\legal_move.cpp",
-          "line": 107
+          "line": 108
         },
         {
           "name": "findCapture_king_multicapture_multibranch",
           "file": "G:\\italian_checkers\\tests\\legal_move.cpp",
-          "line": 140
+          "line": 141
         },
         {
           "name": "findCapture_king_multicapture_loop",
           "file": "G:\\italian_checkers\\tests\\legal_move.cpp",
-          "line": 176
+          "line": 177
         },
         {
           "name": "findCapture_no_capture1",
           "file": "G:\\italian_checkers\\tests\\legal_move.cpp",
-          "line": 210
+          "line": 211
         },
         {
           "name": "findCapture_no_capture2",
           "file": "G:\\italian_checkers\\tests\\legal_move.cpp",
-          "line": 223
+          "line": 224
         },
         {
           "name": "findcapture_check_score",
           "file": "G:\\italian_checkers\\tests\\legal_move.cpp",
-          "line": 237
+          "line": 238
+        },
+        {
+          "name": "findcapture_check_score2",
+          "file": "G:\\italian_checkers\\tests\\legal_move.cpp",
+          "line": 262
+        },
+        {
+          "name": "legal_move_take_max_number_piece",
+          "file": "G:\\italian_checkers\\tests\\legal_move.cpp",
+          "line": 291
+        },
+        {
+          "name": "legal_move_priority_king_over_piece",
+          "file": "G:\\italian_checkers\\tests\\legal_move.cpp",
+          "line": 320
         }
       ]
     }

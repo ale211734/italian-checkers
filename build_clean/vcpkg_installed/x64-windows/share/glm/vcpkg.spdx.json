@@ -3,13 +3,13 @@
   "spdxVersion": "SPDX-2.3",
   "dataLicense": "CC0-1.0",
   "SPDXID": "SPDXRef-DOCUMENT",
-  "documentNamespace": "https://spdx.org/spdxdocs/glm-x64-windows-1.0.3-aab481bc-232f-4ff4-a103-e87aa2b6fde2",
-  "name": "glm:x64-windows@1.0.3 36eeae6652dd967c2c0871c1a44e925bd8c6ddeb4577b5c4d8df4718977b6f95",
+  "documentNamespace": "https://spdx.org/spdxdocs/glm-x64-windows-1.0.3-0497c281-7041-4d43-877d-bb0781a1e569",
+  "name": "glm:x64-windows@1.0.3 28a65462f96cc8a00f13b41765404aa749b4517e1038773fad0c3fbc53c2ee59",
   "creationInfo": {
     "creators": [
-      "Tool: vcpkg-2026-07-27-98d7cb0cf1f4686a3e43aa5672b6230c1d56bce8"
+      "Tool: vcpkg-2026-09-26-51bf87ca6e9bf3e622d84ff323bd202ab1ca0c0b"
     ],
-    "created": "2026-09-29T13:16:42Z"
+    "created": "2026-10-15T18:15:48Z"
   },
   "relationships": [
     {
@@ -2276,7 +2276,7 @@
     {
       "name": "glm:x64-windows",
       "SPDXID": "SPDXRef-binary",
-      "versionInfo": "36eeae6652dd967c2c0871c1a44e925bd8c6ddeb4577b5c4d8df4718977b6f95",
+      "versionInfo": "28a65462f96cc8a00f13b41765404aa749b4517e1038773fad0c3fbc53c2ee59",
       "downloadLocation": "NONE",
       "licenseConcluded": "MIT",
       "licenseDeclared": "NOASSERTION",
@@ -2353,7 +2353,7 @@
       "checksums": [
         {
           "algorithm": "SHA256",
-          "checksumValue": "03962b8221636c41c5bc243eea701a7e09b96f96293eb656863c4788be116c65"
+          "checksumValue": "26bce5aeebee76db039fb6542633e4407b275db8972963f684578bede916f9a3"
         }
       ],
       "licenseConcluded": "NOASSERTION",
@@ -7549,7 +7549,7 @@
       "checksums": [
         {
           "algorithm": "SHA256",
-          "checksumValue": "c38d606ccc68c40ee86ba022e70619ddf778dbfd5164f56328b3c6792f4167b4"
+          "checksumValue": "3decba0b89a320a11c3f306c47a67581ad01647501da0287fc5eb5f5dba3eee8"
         }
       ],
       "licenseConcluded": "NOASSERTION",

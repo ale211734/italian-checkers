@@ -11,6 +11,10 @@ add_library(dama_engine
   engine.h
   game_state.cpp
   game_state.h
+  rules.cpp
+  rules.h
+  move_generator.cpp
+  move_generator.h
   types.h
 )
 add_library(dama::engine ALIAS dama_engine)

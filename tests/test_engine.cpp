@@ -1,5 +1,6 @@
 #include <gtest/gtest.h>
 #include "engine.h"
+#include "rules.h"
 #include <cstdint>
 
 using namespace dama;
