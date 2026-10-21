@@ -1,5 +1,5 @@
 {
-  "tests": 23,
+  "tests": 25,
   "name": "AllTests",
   "testsuites": [
     {
@@ -83,7 +83,7 @@
     },
     {
       "name": "MandatoryCapture",
-      "tests": 12,
+      "tests": 14,
       "testsuite": [
         {
           "name": "findCapture_simple_black",
@@ -144,6 +144,16 @@
           "name": "legal_move_priority_king_over_piece",
           "file": "G:\\italian_checkers\\tests\\legal_move.cpp",
           "line": 320
+        },
+        {
+          "name": "legal_move_priority_king_over_piece2",
+          "file": "G:\\italian_checkers\\tests\\legal_move.cpp",
+          "line": 346
+        },
+        {
+          "name": "legal_move_same_number_and_priority_first_king",
+          "file": "G:\\italian_checkers\\tests\\legal_move.cpp",
+          "line": 371
         }
       ]
     }

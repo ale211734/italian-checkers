@@ -1,6 +1,8 @@
 g:\italian_checkers\build_clean\core\debug\dama_engine.pdb
 g:\italian_checkers\build_clean\core\dama_engine.dir\debug\game_state.obj
 g:\italian_checkers\build_clean\core\dama_engine.dir\debug\engine.obj
+g:\italian_checkers\build_clean\core\dama_engine.dir\debug\move_generator.obj
+g:\italian_checkers\build_clean\core\dama_engine.dir\debug\rules.obj
 g:\italian_checkers\build_clean\core\cmakefiles\generate.stamp
 g:\italian_checkers\build_clean\core\debug\dama_engine.lib
 g:\italian_checkers\build_clean\core\dama_engine.dir\debug\dama_engine.tlog\cl.command.1.tlog

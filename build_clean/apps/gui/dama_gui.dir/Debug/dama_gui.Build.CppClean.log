@@ -3,10 +3,10 @@ g:\italian_checkers\build_clean\apps\gui\dama_gui.dir\debug\ui.obj
 g:\italian_checkers\build_clean\apps\gui\dama_gui.dir\debug\shader.obj
 g:\italian_checkers\build_clean\apps\gui\dama_gui.dir\debug\piece_renderer.obj
 g:\italian_checkers\build_clean\apps\gui\dama_gui.dir\debug\board_renderer.obj
-g:\italian_checkers\build_clean\apps\gui\dama_gui.dir\debug\keyboard.obj
 g:\italian_checkers\build_clean\apps\gui\dama_gui.dir\debug\window.obj
-g:\italian_checkers\build_clean\apps\gui\dama_gui.dir\debug\app.obj
 g:\italian_checkers\build_clean\apps\gui\dama_gui.dir\debug\main.obj
+g:\italian_checkers\build_clean\apps\gui\dama_gui.dir\debug\keyboard.obj
+g:\italian_checkers\build_clean\apps\gui\dama_gui.dir\debug\app.obj
 g:\italian_checkers\build_clean\apps\gui\cmakefiles\generate.stamp
 g:\italian_checkers\build_clean\apps\gui\debug\dama_gui.exe
 g:\italian_checkers\build_clean\apps\gui\debug\dama_gui.pdb
