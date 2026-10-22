@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="G:\italian_checkers\core\engine.cpp">
+    <ClCompile Include="G:\italian_checkers\core\board.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="G:\italian_checkers\core\capture_priority.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="G:\italian_checkers\core\game_state.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="G:\italian_checkers\core\rules.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="G:\italian_checkers\core\move_generator.cpp">
@@ -18,13 +18,16 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="G:\italian_checkers\core\engine.h">
+    <ClInclude Include="G:\italian_checkers\core\board.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="G:\italian_checkers\core\capture_priority.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="G:\italian_checkers\core\game_state.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="G:\italian_checkers\core\rules.h">
+    <ClInclude Include="G:\italian_checkers\core\move.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="G:\italian_checkers\core\move_generator.h">

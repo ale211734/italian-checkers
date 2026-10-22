@@ -7,13 +7,14 @@ target_compile_options(dama_warnings INTERFACE
 )
 
 add_library(dama_engine
-  engine.cpp
-  engine.h
+  board.cpp
+  board.h
+  capture_priority.cpp
+  capture_priority.h
   game_state.cpp
   game_state.h
-  rules.cpp
-  rules.h
   move_generator.cpp
+  move.h
   move_generator.h
   piece.cpp
   piece.h

@@ -2,26 +2,24 @@
 
 namespace dama {
 
-    void GameState::setPiece(Pos p, Piece pc) { board[p.r][p.c] = pc; }
-    Piece GameState::getPiece(Pos p) const { return board[p.r][p.c]; }
+GameState GameState::initial() {
+    GameState gs;
+    gs.board_ = Board::initial();
+    return gs;
+}
 
-    GameState GameState::initial() {
-        GameState gs;
-        // Implementazione logica iniziale:
-        // Nere (Black) in alto (righe 0-2), Bianche (White) in basso (righe 5-7).
-        for (int r = 0; r < kBoardSize; ++r) {
-            for (int c = 0; c < kBoardSize; ++c) {
-                if ((r + c) % 2 == 0) {
-                    if (r < 3) gs.board[r][c] = Piece::Black;
-                    else if (r > 4) gs.board[r][c] = Piece::White;
-                    else gs.board[r][c] = Piece::None;
-                } else {
-                    gs.board[r][c] = Piece::None;
-                }
-            }
-        }
-        gs.black_to_move = true;
-        return gs;
-    }
+GameState GameState::play(const Move& move) const {
+    GameState next = *this;
+    Piece piece = board_.get(move.from());
+
+    for (const Pos& c : move.captured) next.board_.clear(c);
+    next.board_.clear(move.from());
+
+    if (piece.promotesAt(move.to().r)) piece = piece.promoted();
+    next.board_.set(move.to(), piece);
+
+    next.black_to_move_ = !black_to_move_;
+    return next;
+}
 
 }  // namespace dama

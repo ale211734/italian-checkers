@@ -7,7 +7,7 @@
 #include "renderer/board_renderer.h"
 #include "renderer/piece_renderer.h"
 #include "ui/ui.h"
-#include "core/engine.h"
+#include "core/game_state.h"
 #include <memory>
 
 class App {

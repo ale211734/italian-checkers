@@ -1,5 +1,5 @@
-G:\italian_checkers\core\engine.cpp;G:\italian_checkers\build_clean\core\dama_engine.dir\Debug\engine.obj
+G:\italian_checkers\core\board.cpp;G:\italian_checkers\build_clean\core\dama_engine.dir\Debug\board.obj
+G:\italian_checkers\core\capture_priority.cpp;G:\italian_checkers\build_clean\core\dama_engine.dir\Debug\capture_priority.obj
 G:\italian_checkers\core\game_state.cpp;G:\italian_checkers\build_clean\core\dama_engine.dir\Debug\game_state.obj
-G:\italian_checkers\core\rules.cpp;G:\italian_checkers\build_clean\core\dama_engine.dir\Debug\rules.obj
 G:\italian_checkers\core\move_generator.cpp;G:\italian_checkers\build_clean\core\dama_engine.dir\Debug\move_generator.obj
 G:\italian_checkers\core\piece.cpp;G:\italian_checkers\build_clean\core\dama_engine.dir\Debug\piece.obj

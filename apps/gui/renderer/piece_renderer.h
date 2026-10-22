@@ -3,7 +3,7 @@
 #include <glad/glad.h>
 #include "renderer/camera.h"
 #include "renderer/shader.h"
-#include "core/engine.h"
+#include "core/game_state.h"
 
 // Renderer per le pedine e dame, con geometria generata proceduralmente (cerchi).
 class PieceRenderer {

@@ -4,7 +4,7 @@
     <ClCompile Include="G:\italian_checkers\tests\test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="G:\italian_checkers\tests\test_engine.cpp">
+    <ClCompile Include="G:\italian_checkers\tests\test_board.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="G:\italian_checkers\tests\legal_move.cpp">

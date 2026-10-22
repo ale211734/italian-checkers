@@ -305,13 +305,14 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="G:\italian_checkers\core\engine.cpp" />
-    <ClInclude Include="G:\italian_checkers\core\engine.h" />
+    <ClCompile Include="G:\italian_checkers\core\board.cpp" />
+    <ClInclude Include="G:\italian_checkers\core\board.h" />
+    <ClCompile Include="G:\italian_checkers\core\capture_priority.cpp" />
+    <ClInclude Include="G:\italian_checkers\core\capture_priority.h" />
     <ClCompile Include="G:\italian_checkers\core\game_state.cpp" />
     <ClInclude Include="G:\italian_checkers\core\game_state.h" />
-    <ClCompile Include="G:\italian_checkers\core\rules.cpp" />
-    <ClInclude Include="G:\italian_checkers\core\rules.h" />
     <ClCompile Include="G:\italian_checkers\core\move_generator.cpp" />
+    <ClInclude Include="G:\italian_checkers\core\move.h" />
     <ClInclude Include="G:\italian_checkers\core\move_generator.h" />
     <ClCompile Include="G:\italian_checkers\core\piece.cpp" />
     <ClInclude Include="G:\italian_checkers\core\piece.h" />

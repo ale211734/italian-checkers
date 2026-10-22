@@ -1,5 +1,5 @@
 {
-  "tests": 25,
+  "tests": 37,
   "name": "AllTests",
   "testsuites": [
     {
@@ -9,17 +9,17 @@
         {
           "name": "twelve_pieces_each",
           "file": "G:\\italian_checkers\\tests\\test.cpp",
-          "line": 6
+          "line": 7
         },
         {
           "name": "black",
           "file": "G:\\italian_checkers\\tests\\test.cpp",
-          "line": 20
+          "line": 21
         },
         {
           "name": "white",
           "file": "G:\\italian_checkers\\tests\\test.cpp",
-          "line": 35
+          "line": 36
         }
       ]
     },
@@ -30,12 +30,28 @@
         {
           "name": "set",
           "file": "G:\\italian_checkers\\tests\\test.cpp",
-          "line": 50
+          "line": 51
         },
         {
           "name": "get",
           "file": "G:\\italian_checkers\\tests\\test.cpp",
-          "line": 58
+          "line": 59
+        }
+      ]
+    },
+    {
+      "name": "GameStateTest",
+      "tests": 2,
+      "testsuite": [
+        {
+          "name": "play_capture_moves_piece_removes_captured_and_switches_turn",
+          "file": "G:\\italian_checkers\\tests\\test.cpp",
+          "line": 65
+        },
+        {
+          "name": "play_promotes_man_on_last_row",
+          "file": "G:\\italian_checkers\\tests\\test.cpp",
+          "line": 81
         }
       ]
     },
@@ -45,39 +61,60 @@
       "testsuite": [
         {
           "name": "operators",
-          "file": "G:\\italian_checkers\\tests\\test_engine.cpp",
-          "line": 8
+          "file": "G:\\italian_checkers\\tests\\test_board.cpp",
+          "line": 15
         }
       ]
     },
     {
       "name": "BoardTest",
-      "tests": 5,
+      "tests": 2,
       "testsuite": [
         {
           "name": "isPosInside",
-          "file": "G:\\italian_checkers\\tests\\test_engine.cpp",
-          "line": 17
-        },
-        {
-          "name": "getNeighbour",
-          "file": "G:\\italian_checkers\\tests\\test_engine.cpp",
+          "file": "G:\\italian_checkers\\tests\\test_board.cpp",
           "line": 24
         },
         {
-          "name": "getNeighbourAll_black",
-          "file": "G:\\italian_checkers\\tests\\test_engine.cpp",
-          "line": 45
+          "name": "set_get_clear",
+          "file": "G:\\italian_checkers\\tests\\test_board.cpp",
+          "line": 31
+        }
+      ]
+    },
+    {
+      "name": "PieceTest",
+      "tests": 6,
+      "testsuite": [
+        {
+          "name": "black_man_moves_down",
+          "file": "G:\\italian_checkers\\tests\\test_board.cpp",
+          "line": 40
         },
         {
-          "name": "getNeighbourAll_white",
-          "file": "G:\\italian_checkers\\tests\\test_engine.cpp",
-          "line": 97
+          "name": "white_man_moves_up",
+          "file": "G:\\italian_checkers\\tests\\test_board.cpp",
+          "line": 46
         },
         {
-          "name": "getNeighbourAll_king",
-          "file": "G:\\italian_checkers\\tests\\test_engine.cpp",
-          "line": 149
+          "name": "king_moves_in_all_four_directions",
+          "file": "G:\\italian_checkers\\tests\\test_board.cpp",
+          "line": 52
+        },
+        {
+          "name": "empty_has_no_directions",
+          "file": "G:\\italian_checkers\\tests\\test_board.cpp",
+          "line": 58
+        },
+        {
+          "name": "capture_rules",
+          "file": "G:\\italian_checkers\\tests\\test_board.cpp",
+          "line": 62
+        },
+        {
+          "name": "promotion",
+          "file": "G:\\italian_checkers\\tests\\test_board.cpp",
+          "line": 70
         }
       ]
     },
@@ -88,72 +125,113 @@
         {
           "name": "findCapture_simple_black",
           "file": "G:\\italian_checkers\\tests\\legal_move.cpp",
-          "line": 15
+          "line": 16
         },
         {
           "name": "findCapture_black_simple_branch",
           "file": "G:\\italian_checkers\\tests\\legal_move.cpp",
-          "line": 38
+          "line": 34
         },
         {
           "name": "findCapture_king_branch",
           "file": "G:\\italian_checkers\\tests\\legal_move.cpp",
-          "line": 71
+          "line": 62
         },
         {
           "name": "findCapture_king_multicapture",
           "file": "G:\\italian_checkers\\tests\\legal_move.cpp",
-          "line": 108
+          "line": 94
         },
         {
           "name": "findCapture_king_multicapture_multibranch",
           "file": "G:\\italian_checkers\\tests\\legal_move.cpp",
-          "line": 141
+          "line": 122
         },
         {
           "name": "findCapture_king_multicapture_loop",
           "file": "G:\\italian_checkers\\tests\\legal_move.cpp",
-          "line": 177
+          "line": 153
         },
         {
           "name": "findCapture_no_capture1",
           "file": "G:\\italian_checkers\\tests\\legal_move.cpp",
-          "line": 211
+          "line": 183
         },
         {
           "name": "findCapture_no_capture2",
           "file": "G:\\italian_checkers\\tests\\legal_move.cpp",
-          "line": 224
+          "line": 191
         },
         {
           "name": "findcapture_check_score",
           "file": "G:\\italian_checkers\\tests\\legal_move.cpp",
-          "line": 238
+          "line": 200
         },
         {
           "name": "findcapture_check_score2",
           "file": "G:\\italian_checkers\\tests\\legal_move.cpp",
-          "line": 262
+          "line": 221
         },
         {
           "name": "legal_move_take_max_number_piece",
           "file": "G:\\italian_checkers\\tests\\legal_move.cpp",
-          "line": 291
+          "line": 244
         },
         {
           "name": "legal_move_priority_king_over_piece",
           "file": "G:\\italian_checkers\\tests\\legal_move.cpp",
-          "line": 320
+          "line": 269
         },
         {
           "name": "legal_move_priority_king_over_piece2",
           "file": "G:\\italian_checkers\\tests\\legal_move.cpp",
-          "line": 346
+          "line": 289
         },
         {
           "name": "legal_move_same_number_and_priority_first_king",
           "file": "G:\\italian_checkers\\tests\\legal_move.cpp",
+          "line": 309
+        }
+      ]
+    },
+    {
+      "name": "LegalMoves",
+      "tests": 7,
+      "testsuite": [
+        {
+          "name": "initial_position_has_seven_simple_moves_per_side",
+          "file": "G:\\italian_checkers\\tests\\legal_move.cpp",
+          "line": 328
+        },
+        {
+          "name": "white_man_moves_forward_only",
+          "file": "G:\\italian_checkers\\tests\\legal_move.cpp",
+          "line": 338
+        },
+        {
+          "name": "capture_is_mandatory",
+          "file": "G:\\italian_checkers\\tests\\legal_move.cpp",
+          "line": 347
+        },
+        {
+          "name": "white_capture_is_found",
+          "file": "G:\\italian_checkers\\tests\\legal_move.cpp",
+          "line": 358
+        },
+        {
+          "name": "man_cannot_capture_king",
+          "file": "G:\\italian_checkers\\tests\\legal_move.cpp",
           "line": 371
+        },
+        {
+          "name": "equal_priority_captures_are_all_kept",
+          "file": "G:\\italian_checkers\\tests\\legal_move.cpp",
+          "line": 379
+        },
+        {
+          "name": "same_piece_reached_by_two_paths_is_captured_once",
+          "file": "G:\\italian_checkers\\tests\\legal_move.cpp",
+          "line": 388
         }
       ]
     }

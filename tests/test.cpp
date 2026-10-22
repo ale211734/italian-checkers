@@ -1,5 +1,6 @@
 #include <gtest/gtest.h>
-#include "engine.h"
+#include "game_state.h"
+#include "move.h"
 
 using namespace dama;
 
@@ -60,4 +61,28 @@ TEST(SetAndGet, get)
     GameState p = GameState::initial();
     EXPECT_EQ(p.getPiece(Pos(6, 0)), Piece::White);
 
+}
+TEST(GameStateTest, play_capture_moves_piece_removes_captured_and_switches_turn) {
+    GameState s;
+    s.setPiece(Pos(2, 2), Piece::Black);
+    s.setPiece(Pos(3, 3), Piece::White);
+
+    GameState next = s.play(Move({Pos(2, 2), Pos(4, 4)}, {Pos(3, 3)}));
+
+    EXPECT_EQ(next.getPiece(Pos(2, 2)), Piece::None);
+    EXPECT_EQ(next.getPiece(Pos(3, 3)), Piece::None);
+    EXPECT_EQ(next.getPiece(Pos(4, 4)), Piece::Black);
+    EXPECT_FALSE(next.blackToMove());
+    // lo stato di partenza non cambia
+    EXPECT_EQ(s.getPiece(Pos(3, 3)), Piece::White);
+    EXPECT_TRUE(s.blackToMove());
+}
+
+TEST(GameStateTest, play_promotes_man_on_last_row) {
+    GameState s;
+    s.setPiece(Pos(6, 2), Piece::Black);
+
+    GameState next = s.play(Move({Pos(6, 2), Pos(7, 3)}));
+
+    EXPECT_EQ(next.getPiece(Pos(7, 3)), Piece::BlackKing);
 }
