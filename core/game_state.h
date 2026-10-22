@@ -1,6 +1,7 @@
 #pragma once
 
 #include <array>
+#include "piece.h"
 #include "types.h"
 
 namespace dama {

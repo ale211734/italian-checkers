@@ -15,6 +15,8 @@ add_library(dama_engine
   rules.h
   move_generator.cpp
   move_generator.h
+  piece.cpp
+  piece.h
   types.h
 )
 add_library(dama::engine ALIAS dama_engine)

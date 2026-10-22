@@ -1,69 +1,15 @@
 Rilevamento dell'hash del compilatore per la tripletta x64-windows...
 Compilatore trovato: C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe
-I pacchetti seguenti verranno ricompilati:
+I pacchetti seguenti sono gi├á installati:
   * egl-registry:x64-windows@2025-05-27
     glad[core,loader]:x64-windows@0.1.36
     glfw3:x64-windows@3.5.1
     glm:x64-windows@1.0.3
     gtest:x64-windows@1.18.0
-    imgui[core,glfw-binding,opengl3-binding]:x64-windows@1.92.9
+    imgui[core,opengl3-binding,glfw-binding]:x64-windows@1.92.9
   * opengl-registry:x64-windows@2026-08-03
   * vcpkg-cmake:x64-windows@2025-08-07
   * vcpkg-cmake-config:x64-windows@2026-07-21
-I pacchetti aggiuntivi (*) verranno modificati per completare l'operazione.
-Sono stati ripristinati 9 pacchetti da C:\Users\aless\AppData\Local\vcpkg\archives in 521 ms. Usare --debug per visualizzare altri dettagli.
-Rimozione di 1/18 imgui:x64-windows
-Tempo trascorso per la gestione di imgui:x64-windows: 16.4 ms
-Rimozione di 2/18 gtest:x64-windows
-Tempo trascorso per la gestione di gtest:x64-windows: 22.5 ms
-Rimozione di 3/18 glm:x64-windows
-Tempo trascorso per la gestione di glm:x64-windows: 69.1 ms
-Rimozione di 4/18 glfw3:x64-windows
-Tempo trascorso per la gestione di glfw3:x64-windows: 10.1 ms
-Rimozione di 5/18 glad:x64-windows
-Tempo trascorso per la gestione di glad:x64-windows: 11.1 ms
-Rimozione di 6/18 opengl-registry:x64-windows
-Tempo trascorso per la gestione di opengl-registry:x64-windows: 15.2 ms
-Rimozione di 7/18 egl-registry:x64-windows
-Tempo trascorso per la gestione di egl-registry:x64-windows: 10.1 ms
-Rimozione di 8/18 vcpkg-cmake:x64-windows
-Tempo trascorso per la gestione di vcpkg-cmake:x64-windows: 11.9 ms
-Rimozione di 9/18 vcpkg-cmake-config:x64-windows
-Tempo trascorso per la gestione di vcpkg-cmake-config:x64-windows: 27.5 ms
-Installing 10/18 vcpkg-cmake-config:x64-windows@2026-07-21...
-ABI pacchetto vcpkg-cmake-config:x64-windows@2026-07-21: db16d368f28e9127cac11f9ef3a1763f95bbdd665e80139c62aa7a7085ce24b8
-Tempo trascorso per la gestione di vcpkg-cmake-config:x64-windows: 4.05 ms
-Installing 11/18 vcpkg-cmake:x64-windows@2025-08-07...
-ABI pacchetto vcpkg-cmake:x64-windows@2025-08-07: 4c098c2a0bf8e3f7b5c6035c6a57d0691613fc6ab7e362219ac3d2234725512b
-Tempo trascorso per la gestione di vcpkg-cmake:x64-windows: 9.41 ms
-Installing 12/18 egl-registry:x64-windows@2025-05-27...
-ABI pacchetto egl-registry:x64-windows@2025-05-27: 35f952a3313fed4a9ef1d202c2e5b8f39aae023bd87047aefe54a1e7d289d65e
-Tempo trascorso per la gestione di egl-registry:x64-windows: 11.1 ms
-Installing 13/18 opengl-registry:x64-windows@2026-08-03...
-ABI pacchetto opengl-registry:x64-windows@2026-08-03: d09b527247e681c81b6b083ecd84cf3f5b1f5555365ddcc896d7ede49e3cae3b
-Tempo trascorso per la gestione di opengl-registry:x64-windows: 24.5 ms
-Installing 14/18 glad[core,loader]:x64-windows@0.1.36...
-ABI pacchetto glad[core,loader]:x64-windows@0.1.36: f085e07bf7de040ba003359a5b239d0e1d515c449681f057ca116a9533c62931
-Tempo trascorso per la gestione di glad:x64-windows: 16.8 ms
-Installing 15/18 glfw3:x64-windows@3.5.1...
-ABI pacchetto glfw3:x64-windows@3.5.1: 0687220d5ec804e37ad5c1cb41030a120c245b29a6eb90e81a9caa692fe0fc55
-Tempo trascorso per la gestione di glfw3:x64-windows: 10.1 ms
-Installing 16/18 glm:x64-windows@1.0.3...
-ABI pacchetto glm:x64-windows@1.0.3: 28a65462f96cc8a00f13b41765404aa749b4517e1038773fad0c3fbc53c2ee59
-Tempo trascorso per la gestione di glm:x64-windows: 98.4 ms
-Installing 17/18 gtest:x64-windows@1.18.0...
-ABI pacchetto gtest:x64-windows@1.18.0: fd7680ae4e34c91f4f58c4cf5acd69b496eac2f27e01b1360a14049bb6a5978f
-Tempo trascorso per la gestione di gtest:x64-windows: 39.9 ms
-Installing 18/18 imgui[core,glfw-binding,opengl3-binding]:x64-windows@1.92.9...
-ABI pacchetto imgui[core,glfw-binding,opengl3-binding]:x64-windows@1.92.9: 6c9a9435ccf8b5c42b325d3172acdaf726930195279aecf96953b3737b44d60a
-Tempo trascorso per la gestione di imgui:x64-windows: 38 ms
-I contenuti installati sono concessi in licenza dai rispettivi proprietari. Microsoft non ├¿ responsabile n├® concede alcuna licenza per i pacchetti di terzi.
-Alcuni pacchetti non dichiarano una licenza SPDX. Controlla il file 'copyright' per ogni pacchetto per ulteriori informazioni sulle relative licenze.
-I pacchetti installati in questa installazione di vcpkg dichiarano le licenze seguenti:
-Apache-2.0
-BSD-3-Clause
-MIT
-Zlib
 glad fornisce destinazioni CMake:
 
   # generato in modo euristico e potrebbe non essere corretto
@@ -105,4 +51,4 @@ imgui fornisce destinazioni CMake:
   find_package(imgui CONFIG REQUIRED)
   target_link_libraries(main PRIVATE imgui::imgui)
 
-Tutte le installazioni richieste sono state completate in: 457 ms
+Tutte le installazioni richieste sono state completate in: 305 us

@@ -92,7 +92,7 @@ void PieceRenderer::render(const Camera& camera, const dama::GameState& gameStat
     for (int r = 0; r < dama::kBoardSize; ++r) {
         for (int c = 0; c < dama::kBoardSize; ++c) {
             dama::Piece p = gameState.getPiece({r, c});
-            if (p == dama::Piece::None) continue;
+            if (p.isEmpty()) continue;
 
             // Calcolo posizione mondiale del centro della casella (r, c)
             float worldX = static_cast<float>(c) + 0.5f - 4.0f;
@@ -103,7 +103,7 @@ void PieceRenderer::render(const Camera& camera, const dama::GameState& gameStat
 
             // Colore della pedina
             float color[4];
-            if (p == dama::Piece::White || p == dama::Piece::WhiteKing) {
+            if (p.isWhite()) {
                 color[0] = 0.92f; color[1] = 0.92f; color[2] = 0.92f; color[3] = 1.0f; // Bianco
             } else {
                 color[0] = 0.18f; color[1] = 0.18f; color[2] = 0.18f; color[3] = 1.0f; // Nero

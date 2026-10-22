@@ -22,3 +22,6 @@
 .vscode/
 *.user
 Nuovo Documento di testo.txt
+
+# Claude
+.claude/

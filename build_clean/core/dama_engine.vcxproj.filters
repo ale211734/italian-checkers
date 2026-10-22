@@ -13,6 +13,9 @@
     <ClCompile Include="G:\italian_checkers\core\move_generator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="G:\italian_checkers\core\piece.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="G:\italian_checkers\core\engine.h">
@@ -25,6 +28,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="G:\italian_checkers\core\move_generator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="G:\italian_checkers\core\piece.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="G:\italian_checkers\core\types.h">

@@ -19,13 +19,12 @@ namespace dama {
         std::string s;
         for (int r = 0; r < kBoardSize; ++r) {
             for (int c = 0; c < kBoardSize; ++c) {
-                switch (p.getPiece({r, c})) {
-                    case Piece::Black: s += "b "; break;
-                    case Piece::White: s += "w "; break;
-                    case Piece::BlackKing: s += "B "; break;
-                    case Piece::WhiteKing: s += "W "; break;
-                    default: s += ((r + c) % 2 == 0) ? ". " : "  "; break;
-                }
+                Piece pc = p.getPiece({r, c});
+                if (pc == Piece::Black) s += "b ";
+                else if (pc == Piece::White) s += "w ";
+                else if (pc == Piece::BlackKing) s += "B ";
+                else if (pc == Piece::WhiteKing) s += "W ";
+                else s += ((r + c) % 2 == 0) ? ". " : "  ";
             }
             s += "\n";
         }
